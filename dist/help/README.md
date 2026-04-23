@@ -6,7 +6,7 @@ This folder is the **single source of truth** for in-app help content.
 
 - Source (edit here): `help/`
 - Generated runtime copy: `public/help/`
-- Generated local build copy: `dist-electron/help/`
+- Production renderer artifact: `dist/help/` (copied from `public/` during Vite build)
 
 Do not manually maintain the generated folders. They are synchronized from `help/`.
 

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-23T19:41:00.093Z",
+  "generatedAt": "2026-04-23T20:46:41.916Z",
   "totalPages": 17,
   "pages": [
     {
@@ -84,7 +84,7 @@
       "slug": "README",
       "path": "README.md",
       "title": "Help Docs Workflow",
-      "hash": "d0894dbc817eb51e145f0f4f16e46f75960096b15c3bdf85206587c588a727a0"
+      "hash": "ebc74c73abae5351770bb5b80a1e75f9003164294e59808c01feba6a65fdb85a"
     },
     {
       "slug": "settings",

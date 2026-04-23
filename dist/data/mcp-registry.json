@@ -1,0 +1,1286 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-04-23T20:46:41.927Z",
+  "source": "sami-mcp-gallery",
+  "totalServers": 15,
+  "servers": [
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.blazickjp/arxiv-mcp-server",
+      "title": "arXiv MCP Server",
+      "description": "MCP server for arXiv search, downloads, semantic lookup, and citation exploration.",
+      "version": "0.1.0",
+      "repository": {
+        "url": "https://github.com/blazickjp/arxiv-mcp-server",
+        "source": "github"
+      },
+      "websiteUrl": "https://arxiv.org/",
+      "packages": [
+        {
+          "registryType": "pypi",
+          "registryBaseUrl": "https://pypi.org",
+          "identifier": "arxiv-mcp-server",
+          "transport": {
+            "type": "stdio"
+          },
+          "runtimeHint": "uvx"
+        }
+      ],
+      "_meta": {
+        "io.sami/gallery": {
+          "legacyId": "builtin-arxiv-search",
+          "icon": "file-text",
+          "iconBg": "#00AA00",
+          "category": "Web Services",
+          "maintained": "community",
+          "toolsSummary": [
+            {
+              "name": "search_papers",
+              "description": "Search for papers on arXiv with advanced filters and sorting."
+            },
+            {
+              "name": "download_paper",
+              "description": "Download a paper and return its full text content."
+            },
+            {
+              "name": "list_papers",
+              "description": "List all papers downloaded and stored locally."
+            },
+            {
+              "name": "read_paper",
+              "description": "Read the full text content of a previously downloaded paper."
+            },
+            {
+              "name": "get_abstract",
+              "description": "Fetch abstract and metadata of an arXiv paper by ID."
+            },
+            {
+              "name": "semantic_search",
+              "description": "Run semantic similarity search over downloaded papers."
+            },
+            {
+              "name": "reindex",
+              "description": "Rebuild the local semantic index."
+            },
+            {
+              "name": "citation_graph",
+              "description": "Get citing and cited papers from citation graph sources."
+            },
+            {
+              "name": "watch_topic",
+              "description": "Create persistent alerts for new papers on a topic."
+            },
+            {
+              "name": "check_alerts",
+              "description": "Check topic watches for newly published papers."
+            }
+          ]
+        },
+        "io.sami/install": {
+          "configSnippet": "{\n  \"mcpServers\": {\n    \"builtin-arxiv-search\": {\n      \"command\": \"uvx\",\n      \"args\": [\"arxiv-mcp-server\"]\n    }\n  }\n}"
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.roychri/mcp-server-asana",
+      "title": "Asana",
+      "description": "MCP server for Asana task, project, and workflow management automation.",
+      "version": "0.1.0",
+      "repository": {
+        "url": "https://github.com/roychri/mcp-server-asana",
+        "source": "github"
+      },
+      "websiteUrl": "https://developers.asana.com/docs",
+      "packages": [
+        {
+          "registryType": "npm",
+          "registryBaseUrl": "https://registry.npmjs.org",
+          "identifier": "@roychri/mcp-server-asana",
+          "transport": {
+            "type": "stdio"
+          },
+          "runtimeHint": "npx",
+          "environmentVariables": [
+            {
+              "name": "ASANA_ACCESS_TOKEN",
+              "description": "Personal access token from the Asana developer console.",
+              "isRequired": true,
+              "isSecret": true
+            },
+            {
+              "name": "READ_ONLY_MODE",
+              "description": "Set to true to disable write operations.",
+              "isRequired": false,
+              "isSecret": false,
+              "default": "false"
+            }
+          ]
+        }
+      ],
+      "_meta": {
+        "io.sami/gallery": {
+          "legacyId": "builtin-asana",
+          "icon": "asana",
+          "iconBg": "#174A6F",
+          "category": "Development",
+          "maintained": "community",
+          "toolsSummary": [
+            {
+              "name": "asana_list_workspaces",
+              "description": "List all available Asana workspaces."
+            },
+            {
+              "name": "asana_search_projects",
+              "description": "Search for projects using name matching."
+            },
+            {
+              "name": "asana_search_tasks",
+              "description": "Search tasks with workspace-level filters."
+            },
+            {
+              "name": "asana_get_task",
+              "description": "Get detailed information for a specific task."
+            },
+            {
+              "name": "asana_create_task",
+              "description": "Create a new task in a project."
+            },
+            {
+              "name": "asana_update_task",
+              "description": "Update an existing task."
+            },
+            {
+              "name": "asana_get_project",
+              "description": "Get detailed project information."
+            },
+            {
+              "name": "asana_get_tasks_for_project",
+              "description": "List tasks for a specific project."
+            }
+          ]
+        },
+        "io.sami/install": {
+          "configSnippet": "{\n  \"mcpServers\": {\n    \"asana\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"@roychri/mcp-server-asana\"]\n    }\n  }\n}"
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.sami/builtin-asana-oauth",
+      "title": "Asana",
+      "description": "Asana Official MCP Server. Enables AI agents to interact with Asana workspaces: access data, crea...",
+      "version": "0.1.0",
+      "websiteUrl": "https://developers.asana.com/docs",
+      "_meta": {
+        "io.sami/gallery": {
+          "legacyId": "builtin-asana-oauth",
+          "icon": "asana",
+          "iconBg": "#ee5f2b",
+          "category": "Development",
+          "maintained": "vendor",
+          "toolsSummary": [
+            {
+              "name": "list_workspaces",
+              "description": "Retrieve all workspaces accessible to the authenticated user."
+            },
+            {
+              "name": "get_projects",
+              "description": "Fetch projects within a specified workspace."
+            },
+            {
+              "name": "create_project",
+              "description": "Create a new project with name, description, and settings."
+            },
+            {
+              "name": "get_tasks",
+              "description": "List tasks in a project or section, with optional filters."
+            },
+            {
+              "name": "create_task",
+              "description": "Add a new task to a project, with assignee and due date."
+            },
+            {
+              "name": "update_task",
+              "description": "Modify task properties like completion status or custom fields."
+            },
+            {
+              "name": "search_asana",
+              "description": "Search for tasks, projects, or users across the workspace."
+            },
+            {
+              "name": "add_comment",
+              "description": "Post a comment on a task."
+            },
+            {
+              "name": "get_project_overview",
+              "description": "Get summary and status of a project."
+            },
+            {
+              "name": "generate_report",
+              "description": "Create reports based on Asana data."
+            }
+          ]
+        },
+        "io.sami/install": {
+          "configSnippet": "{\n  \"mcpServers\": {\n    \"builtin-asana-oauth\": {\n      \"url\": \"https://mcp.asana.com/sse\",\n      \"type\": \"sse\"\n    }\n  }\n}"
+        }
+      },
+      "remotes": [
+        {
+          "type": "sse",
+          "url": "https://mcp.asana.com/sse"
+        }
+      ]
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.brave/brave-search-mcp-server",
+      "title": "Brave Search",
+      "description": "Integrates Brave's Search API to provide web search, local business search, image search, video s...",
+      "version": "0.1.0",
+      "repository": {
+        "url": "https://github.com/brave/brave-search-mcp-server",
+        "source": "github"
+      },
+      "websiteUrl": "https://api.search.brave.com/",
+      "_meta": {
+        "io.sami/gallery": {
+          "legacyId": "builtin-brave",
+          "icon": "brave",
+          "iconBg": "#FB542B",
+          "category": "Web Services",
+          "maintained": "vendor",
+          "toolsSummary": [
+            {
+              "name": "brave_web_search",
+              "description": "Performs comprehensive web searches with rich result types and advanced filtering options."
+            },
+            {
+              "name": "brave_local_search",
+              "description": "Searches for local businesses and places with detailed information including ratings, hours, and AI-generated descriptions."
+            },
+            {
+              "name": "brave_video_search",
+              "description": "Searches for videos with comprehensive metadata and thumbnail information."
+            },
+            {
+              "name": "brave_image_search",
+              "description": "Searches for images with automatic fetching and base64 encoding for direct display."
+            },
+            {
+              "name": "brave_news_search",
+              "description": "Searches for current news articles with freshness controls and breaking news indicators."
+            },
+            {
+              "name": "brave_summarizer",
+              "description": "Generates AI-powered summaries from web search results using Brave's summarization API."
+            }
+          ]
+        },
+        "io.sami/install": {
+          "configSnippet": "{\n  \"mcpServers\": {\n    \"builtin-brave\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"@brave/brave-search-mcp-server\", \"--transport\", \"http\"],\n      \"env\": {\n        \"BRAVE_API_KEY\": \"YOUR_API_KEY_HERE\"\n      }\n    }\n  }\n}"
+        }
+      },
+      "packages": [
+        {
+          "registryType": "npm",
+          "registryBaseUrl": "https://registry.npmjs.org",
+          "identifier": "@brave/brave-search-mcp-server",
+          "transport": {
+            "type": "stdio"
+          },
+          "runtimeHint": "npx",
+          "environmentVariables": [
+            {
+              "name": "BRAVE_API_KEY",
+              "description": "API key for authentication with the Brave Search API. Sign up for an account and generate your key from the Brave Search API developer dashboard (api.search.brave.com/app/keys).",
+              "isRequired": true,
+              "isSecret": true
+            },
+            {
+              "name": "BRAVE_MCP_TRANSPORT",
+              "description": "Transport mode (\\\"http\\\" or \\\"stdio\\\", default: \\\"stdio\\\")",
+              "isRequired": false,
+              "isSecret": false,
+              "default": "stdio"
+            },
+            {
+              "name": "BRAVE_MCP_PORT",
+              "description": "HTTP server port (default: 8000)",
+              "isRequired": false,
+              "isSecret": false,
+              "default": "8000"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.iqaicom/mcp-calculator",
+      "title": "Calculator",
+      "description": "Precise numerical calculations and expression evaluation. Enables AI agents to perform accurate m...",
+      "version": "0.1.0",
+      "repository": {
+        "url": "https://github.com/IQAIcom/mcp-calculator",
+        "source": "github"
+      },
+      "_meta": {
+        "io.sami/gallery": {
+          "legacyId": "builtin-calculator",
+          "icon": "calculator",
+          "iconBg": "#2196F3",
+          "category": "Utilities",
+          "maintained": "vendor",
+          "toolsSummary": [
+            {
+              "name": "calculate",
+              "description": "Calculates/evaluates the given expression."
+            }
+          ]
+        },
+        "io.sami/install": {
+          "configSnippet": "{\n  \"mcpServers\": {\n    \"builtin-calculator\": {\n      \"command\": \"uvx\",\n      \"args\": [\"mcp-server-calculator\"]\n    }\n  }\n}"
+        }
+      },
+      "packages": [
+        {
+          "registryType": "pypi",
+          "registryBaseUrl": "https://pypi.org",
+          "identifier": "mcp-server-calculator",
+          "transport": {
+            "type": "stdio"
+          },
+          "runtimeHint": "uvx"
+        }
+      ]
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.chromedevtools/chrome-devtools-mcp",
+      "title": "Chrome DevTools",
+      "description": "Provides direct Chrome browser control through DevTools for web automation, debugging, and perfor...",
+      "version": "0.1.0",
+      "repository": {
+        "url": "https://github.com/chromedevtools/chrome-devtools-mcp",
+        "source": "github"
+      },
+      "websiteUrl": "https://developer.chrome.com/docs/devtools/",
+      "_meta": {
+        "io.sami/gallery": {
+          "legacyId": "builtin-chrome-devtools",
+          "icon": "chrome",
+          "iconBg": "#4285F4",
+          "category": "Development",
+          "maintained": "community",
+          "toolsSummary": [
+            {
+              "name": "click",
+              "description": "Clicks on the provided element"
+            },
+            {
+              "name": "close_page",
+              "description": "Closes the page by its index. The last open page cannot be closed."
+            },
+            {
+              "name": "drag",
+              "description": "Drag an element onto another element"
+            },
+            {
+              "name": "emulate",
+              "description": "Emulates various features on the selected page."
+            },
+            {
+              "name": "evaluate_script",
+              "description": "Evaluate a JavaScript function inside the currently selected page. Returns the response as JSON, so returned values have to be JSON-serializable."
+            },
+            {
+              "name": "fill",
+              "description": "Type text into a input, text area or select an option from a <select> element."
+            },
+            {
+              "name": "fill_form",
+              "description": "Fill out multiple form elements at once"
+            },
+            {
+              "name": "get_console_message",
+              "description": "Gets a console message by its ID. You can get all messages by calling list_console_messages."
+            },
+            {
+              "name": "get_network_request",
+              "description": "Gets a network request by an optional reqid, if omitted returns the currently selected request in the DevTools Network panel."
+            },
+            {
+              "name": "handle_dialog",
+              "description": "If a browser dialog was opened, use this command to handle it"
+            },
+            {
+              "name": "hover",
+              "description": "Hover over the provided element"
+            },
+            {
+              "name": "lighthouse_audit",
+              "description": "Get Lighthouse score and reports for accessibility, SEO and best practices. This excludes performance. For performance audits, run performance_start_trace"
+            },
+            {
+              "name": "list_console_messages",
+              "description": "List all console messages for the currently selected page since the last navigation."
+            },
+            {
+              "name": "list_network_requests",
+              "description": "List all requests for the currently selected page since the last navigation."
+            },
+            {
+              "name": "list_pages",
+              "description": "Get a list of pages open in the browser."
+            },
+            {
+              "name": "navigate_page",
+              "description": "Go to a URL, or back, forward, or reload. Use project URL if not specified otherwise."
+            },
+            {
+              "name": "new_page",
+              "description": "Open a new tab and load a URL. Use project URL if not specified otherwise."
+            },
+            {
+              "name": "performance_analyze_insight",
+              "description": "Provides more detailed information on a specific Performance Insight of an insight set that was highlighted in the results of a trace recording."
+            },
+            {
+              "name": "performance_start_trace",
+              "description": "Start a performance trace on the selected webpage. Use to find frontend performance issues, Core Web Vitals (LCP, INP, CLS), and improve page load speed."
+            },
+            {
+              "name": "performance_stop_trace",
+              "description": "Stop the active performance trace recording on the selected webpage."
+            },
+            {
+              "name": "press_key",
+              "description": "Press a key or key combination. Use this when other input methods like fill() cannot be used (e.g., keyboard shortcuts, navigation keys, or special key combinations)."
+            },
+            {
+              "name": "resize_page",
+              "description": "Resizes the selected page's window so that the page has specified dimension"
+            },
+            {
+              "name": "select_page",
+              "description": "Select a page as a context for future tool calls."
+            },
+            {
+              "name": "take_memory_snapshot",
+              "description": "Capture a heap snapshot of the currently selected page. Use to analyze the memory distribution of JavaScript objects and debug memory leaks."
+            },
+            {
+              "name": "take_screenshot",
+              "description": "Take a screenshot of the page or element."
+            },
+            {
+              "name": "take_snapshot",
+              "description": "Take a text snapshot of the currently selected page based on the a11y tree. The snapshot lists page elements along with a unique identifier (uid). Always use the latest snapshot. Prefer taking a snapshot over taking a screenshot. The snapshot indicates the element selected in the DevTools Elements panel (if any)."
+            },
+            {
+              "name": "type_text",
+              "description": "Type text using keyboard into a previously focused input"
+            },
+            {
+              "name": "upload_file",
+              "description": "Upload a file through a provided element."
+            },
+            {
+              "name": "wait_for",
+              "description": "Wait for the specified text to appear on the selected page."
+            }
+          ]
+        },
+        "io.sami/install": {
+          "configSnippet": "{\n  \"mcpServers\": {\n    \"builtin-chrome-devtools\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"chrome-devtools-mcp@latest\"]\n    }\n  }\n}"
+        }
+      },
+      "packages": [
+        {
+          "registryType": "npm",
+          "registryBaseUrl": "https://registry.npmjs.org",
+          "identifier": "chrome-devtools-mcp",
+          "transport": {
+            "type": "stdio"
+          },
+          "runtimeHint": "npx"
+        }
+      ]
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.mladensu/cli-mcp-server",
+      "title": "CLI Secure",
+      "description": "Execute shell commands with strict security policies in a sandboxed environment. Supports running...",
+      "version": "0.1.0",
+      "repository": {
+        "url": "https://github.com/mladensu/cli-mcp-server",
+        "source": "github"
+      },
+      "websiteUrl": "https://github.com/mladensu/cli-mcp-server",
+      "_meta": {
+        "io.sami/gallery": {
+          "legacyId": "builtin-cli-sequre",
+          "icon": "terminal",
+          "iconBg": "#4F46E5",
+          "category": "Development",
+          "maintained": "vendor",
+          "toolsSummary": [
+            {
+              "name": "run_command",
+              "description": "Execute a single secure CLI command in the sandboxed directory D:\\mcpSandbox. Available commands: ls, cat, pwd, echo. Available flags: --version, -l, -a, --help. Shell operators are not supported."
+            },
+            {
+              "name": "show_security_rules",
+              "description": "Show the security configuration, including allowed commands, flags, limits, and working directory."
+            }
+          ]
+        },
+        "io.sami/install": {
+          "configSnippet": "{\n  \"mcpServers\": {\n    \"builtin-cli-sequre\": {\n      \"command\": \"uvx\",\n      \"args\": [\"cli-mcp-server\"],\n      \"env\": {\n        \"ALLOWED_COMMANDS\": \"ls,cat,pwd,echo\",\n        \"ALLOWED_FLAGS\": \"-l,-a,--help,--version\",\n        \"MAX_COMMAND_LENGTH\": \"1024\",\n        \"COMMAND_TIMEOUT\": \"30\",\n        \"ALLOW_SHELL_OPERATORS\": \"false\"\n      }\n    }\n  }\n}"
+        }
+      },
+      "packages": [
+        {
+          "registryType": "pypi",
+          "registryBaseUrl": "https://pypi.org",
+          "identifier": "cli-mcp-server",
+          "transport": {
+            "type": "stdio"
+          },
+          "runtimeHint": "uvx",
+          "environmentVariables": [
+            {
+              "name": "ALLOWED_COMMANDS",
+              "description": "Comma-separated list of allowed commands (default: ls,cat,pwd,echo)",
+              "isRequired": false,
+              "isSecret": false,
+              "default": "ls,cat,pwd,echo"
+            },
+            {
+              "name": "ALLOWED_FLAGS",
+              "description": "Comma-separated list of allowed flags (default: -l,-a,--help,--version)",
+              "isRequired": false,
+              "isSecret": false,
+              "default": "-l,-a,--help,--version"
+            },
+            {
+              "name": "MAX_COMMAND_LENGTH",
+              "description": "Maximum length of a command in characters (default: 1024)",
+              "isRequired": false,
+              "isSecret": false,
+              "default": "1024"
+            },
+            {
+              "name": "COMMAND_TIMEOUT",
+              "description": "Timeout for command execution in seconds (default: 30)",
+              "isRequired": false,
+              "isSecret": false,
+              "default": "30"
+            },
+            {
+              "name": "ALLOW_SHELL_OPERATORS",
+              "description": "Allow shell operators like &&, || (default: false)",
+              "isRequired": false,
+              "isSecret": false,
+              "default": "false"
+            },
+            {
+              "name": "ALLOWED_DIR",
+              "description": "The allowed directory for command execution",
+              "isRequired": true,
+              "isSecret": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.upstash/context7",
+      "title": "Context7",
+      "description": "Provides access to up-to-date code documentation and examples for various programming libraries a...",
+      "version": "0.1.0",
+      "repository": {
+        "url": "https://github.com/upstash/context7",
+        "source": "github"
+      },
+      "websiteUrl": "https://github.com/upstash/context7",
+      "_meta": {
+        "io.sami/gallery": {
+          "legacyId": "builtin-context7",
+          "icon": "book",
+          "iconBg": "#3b82f6",
+          "category": "Development",
+          "maintained": "vendor",
+          "toolsSummary": [
+            {
+              "name": "resolve-library-id",
+              "description": "Resolve a library name to its Context7-compatible ID and matching libraries."
+            },
+            {
+              "name": "query-docs",
+              "description": "Query up-to-date documentation and code examples for a specified library."
+            }
+          ]
+        },
+        "io.sami/install": {
+          "configSnippet": "{\n  \"mcpServers\": {\n    \"builtin-context7\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"@upstash/context7-mcp\"]\n    }\n  }\n}"
+        }
+      },
+      "packages": [
+        {
+          "registryType": "npm",
+          "registryBaseUrl": "https://registry.npmjs.org",
+          "identifier": "@upstash/context7-mcp",
+          "transport": {
+            "type": "stdio"
+          },
+          "runtimeHint": "npx",
+          "environmentVariables": [
+            {
+              "name": "CONTEXT7_API_KEY",
+              "description": "API key for authentication",
+              "isRequired": true,
+              "isSecret": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.mcp/wonderwhy-er",
+      "title": "Desktop Commander MCP",
+      "description": "Integrates terminal and filesystem capabilities for executing system commands, managing processes...",
+      "version": "0.1.0",
+      "repository": {
+        "url": "https://github.com/mcp/wonderwhy-er/desktop-commander",
+        "source": "github"
+      },
+      "websiteUrl": "https://www.npmjs.com/package/@wonderwhy-er/desktop-commander",
+      "_meta": {
+        "io.sami/gallery": {
+          "legacyId": "builtin-desktop-commander",
+          "icon": "terminal",
+          "iconBg": "#4A90E2",
+          "category": "Development",
+          "maintained": "vendor",
+          "toolsSummary": [
+            {
+              "name": "get_config",
+              "description": "Retrieve the complete server configuration including allowed directories, blocked commands, and system info."
+            },
+            {
+              "name": "set_config_value",
+              "description": "Update configuration values like allowed directories or file limits."
+            },
+            {
+              "name": "read_file",
+              "description": "Read file contents supporting text, PDFs, Excel, DOCX, and images with pagination."
+            },
+            {
+              "name": "read_multiple_files",
+              "description": "Read contents of multiple files simultaneously for comparison or analysis."
+            },
+            {
+              "name": "write_file",
+              "description": "Create or append to text files and Excel sheets, with chunking for large files."
+            },
+            {
+              "name": "write_pdf",
+              "description": "Generate new PDFs from markdown or modify existing ones with insert/delete operations."
+            },
+            {
+              "name": "create_directory",
+              "description": "Create directories, including nested paths."
+            },
+            {
+              "name": "list_directory",
+              "description": "List files and directories with recursion and size information."
+            },
+            {
+              "name": "move_file",
+              "description": "Move or rename files and directories within allowed paths."
+            },
+            {
+              "name": "search_files",
+              "description": "Recursively search for files matching glob patterns."
+            },
+            {
+              "name": "get_file_info",
+              "description": "Get metadata like size, timestamps, and permissions for files/directories."
+            },
+            {
+              "name": "edit_block",
+              "description": "Perform precise edits in text, Excel ranges, or DOCX XML."
+            },
+            {
+              "name": "start_process",
+              "description": "Launch terminal processes or REPLs (Python, Node.js) for interactive execution."
+            },
+            {
+              "name": "interact_with_process",
+              "description": "Send commands to and retrieve output from running processes."
+            },
+            {
+              "name": "start_search",
+              "description": "Initiate streaming file or content searches with progressive results."
+            },
+            {
+              "name": "list_processes",
+              "description": "View all running processes with resource usage details."
+            },
+            {
+              "name": "kill_process",
+              "description": "Terminate processes by PID."
+            }
+          ]
+        },
+        "io.sami/install": {
+          "configSnippet": "{\n  \"mcpServers\": {\n    \"builtin-desktop-commander\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"@wonderwhy-er/desktop-commander@latest\"]\n    }\n  }\n}"
+        }
+      },
+      "packages": [
+        {
+          "registryType": "npm",
+          "registryBaseUrl": "https://registry.npmjs.org",
+          "identifier": "@wonderwhy-er/desktop-commander",
+          "transport": {
+            "type": "stdio"
+          },
+          "runtimeHint": "npx",
+          "environmentVariables": [
+            {
+              "name": "ALLOWED_DIRECTORIES",
+              "description": "Array of paths the server can access (configured via set_config_value)",
+              "isRequired": false,
+              "isSecret": false
+            },
+            {
+              "name": "DEFAULT_SHELL",
+              "description": "Shell to use for commands (e.g., powershell.exe, cmd)",
+              "isRequired": false,
+              "isSecret": false,
+              "default": "powershell.exe"
+            },
+            {
+              "name": "TELEMETRY_ENABLED",
+              "description": "Enable telemetry data collection",
+              "isRequired": false,
+              "isSecret": false,
+              "default": "false"
+            },
+            {
+              "name": "TRANSPORT",
+              "description": "Transport method: stdio or http",
+              "isRequired": false,
+              "isSecret": false,
+              "default": "stdio"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.iqaicom/mcp-discord",
+      "title": "Discord",
+      "description": "MCP server for Discord messaging, channels, reactions, and moderation workflows.",
+      "version": "0.1.0",
+      "repository": {
+        "url": "https://github.com/iqaicom/mcp-discord",
+        "source": "github"
+      },
+      "websiteUrl": "https://discord.com/developers/docs",
+      "packages": [
+        {
+          "registryType": "npm",
+          "registryBaseUrl": "https://registry.npmjs.org",
+          "identifier": "@iqai/mcp-discord",
+          "transport": {
+            "type": "stdio"
+          },
+          "runtimeHint": "npx",
+          "environmentVariables": [
+            {
+              "name": "DISCORD_TOKEN",
+              "description": "Bot token from Discord Developer Portal.",
+              "isRequired": true,
+              "isSecret": true
+            },
+            {
+              "name": "SAMPLING_ENABLED",
+              "description": "Enables bidirectional message sampling.",
+              "isRequired": false,
+              "isSecret": false,
+              "default": "true"
+            },
+            {
+              "name": "TRANSPORT",
+              "description": "Transport method: stdio or http.",
+              "isRequired": false,
+              "isSecret": false,
+              "default": "stdio"
+            },
+            {
+              "name": "RESPOND_TO_MENTIONS_ONLY",
+              "description": "Only respond when bot is mentioned.",
+              "isRequired": false,
+              "isSecret": false,
+              "default": "true"
+            },
+            {
+              "name": "BLOCK_DMS",
+              "description": "Block direct messages to the bot.",
+              "isRequired": false,
+              "isSecret": false,
+              "default": "true"
+            }
+          ]
+        }
+      ],
+      "_meta": {
+        "io.sami/gallery": {
+          "legacyId": "builtin-discord",
+          "icon": "discord",
+          "iconBg": "#5865F2",
+          "category": "Communication",
+          "maintained": "community",
+          "toolsSummary": [
+            {
+              "name": "send_message",
+              "description": "Send a message to a Discord text channel."
+            },
+            {
+              "name": "read_messages",
+              "description": "Read recent messages from a channel."
+            },
+            {
+              "name": "delete_message",
+              "description": "Delete a channel message by ID."
+            },
+            {
+              "name": "create_channel",
+              "description": "Create a new text channel."
+            },
+            {
+              "name": "delete_channel",
+              "description": "Delete an existing channel."
+            },
+            {
+              "name": "create_forum_post",
+              "description": "Create a new forum thread with initial content."
+            },
+            {
+              "name": "reply_to_forum_post",
+              "description": "Post a reply in an existing forum thread."
+            },
+            {
+              "name": "add_reaction",
+              "description": "Add one or more emoji reactions to a message."
+            }
+          ]
+        },
+        "io.sami/install": {
+          "configSnippet": "{\n  \"mcpServers\": {\n    \"discord\": {\n      \"command\": \"npx\",\n      \"args\": [\"@iqai/mcp-discord\"],\n      \"env\": {\n        \"DISCORD_TOKEN\": \"YOUR_DISCORD_TOKEN\"\n      }\n    }\n  }\n}"
+        }
+      }
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.ktanaka101/mcp-server-duckdb",
+      "title": "DuckDB",
+      "description": "Enables AI agents to interact with DuckDB databases: execute SQL queries for data analysis, schem...",
+      "version": "0.1.0",
+      "repository": {
+        "url": "https://github.com/ktanaka101/mcp-server-duckdb",
+        "source": "github"
+      },
+      "websiteUrl": "https://duckdb.org/",
+      "_meta": {
+        "io.sami/gallery": {
+          "legacyId": "builtin-duckdb",
+          "icon": "database",
+          "iconBg": "#10B981",
+          "category": "Data",
+          "maintained": "community",
+          "toolsSummary": [
+            {
+              "name": "query",
+              "description": "Execute any SQL query on the DuckDB database. Supports SELECT for querying, CREATE/INSERT/UPDATE/DELETE for modifications (if not read-only), and other SQL operations. Input: query (string). Output: Results as text or success message."
+            }
+          ]
+        },
+        "io.sami/install": {
+          "configSnippet": "{\n  \"mcpServers\": {\n    \"builtin-duckdb\": {\n      \"command\": \"uvx\",\n      \"args\": [\"mcp-server-duckdb\", \"--db-path\", \"YOUR_DB_PATH\"]\n    }\n  }\n}"
+        }
+      },
+      "packages": [
+        {
+          "registryType": "pypi",
+          "registryBaseUrl": "https://pypi.org",
+          "identifier": "mcp-server-duckdb",
+          "transport": {
+            "type": "stdio"
+          },
+          "runtimeHint": "uvx",
+          "environmentVariables": [
+            {
+              "name": "READ_ONLY",
+              "description": "Run server in read-only mode",
+              "isRequired": false,
+              "isSecret": false,
+              "default": "false"
+            },
+            {
+              "name": "KEEP_CONNECTION",
+              "description": "Re-uses a single DuckDB connection for the entire server lifetime",
+              "isRequired": false,
+              "isSecret": false,
+              "default": "false"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.nickclyde/duckduckgo-mcp-server",
+      "title": "DuckDuckGo Search",
+      "description": "Provides web search capabilities through DuckDuckGo, with additional features for content fetchin...",
+      "version": "0.1.0",
+      "repository": {
+        "url": "https://github.com/nickclyde/duckduckgo-mcp-server",
+        "source": "github"
+      },
+      "websiteUrl": "https://duckduckgo.com",
+      "_meta": {
+        "io.sami/gallery": {
+          "legacyId": "builtin-duckduckgo",
+          "icon": "duckduckgo",
+          "iconBg": "#DE5833",
+          "category": "Web Services",
+          "maintained": "community",
+          "toolsSummary": [
+            {
+              "name": "search",
+              "description": "Search the web using DuckDuckGo. Returns a list of results with titles, URLs, and snippets."
+            },
+            {
+              "name": "fetch_content",
+              "description": "Fetch and extract the main text content from a webpage. Strips out navigation, headers, footers, scripts, and styles to return clean readable text."
+            }
+          ]
+        },
+        "io.sami/install": {
+          "configSnippet": "{\n  \"mcpServers\": {\n    \"builtin-duckduckgo\": {\n      \"command\": \"uvx\",\n      \"args\": [\"duckduckgo-mcp-server\"]\n    }\n  }\n}"
+        }
+      },
+      "packages": [
+        {
+          "registryType": "pypi",
+          "registryBaseUrl": "https://pypi.org",
+          "identifier": "duckduckgo-mcp-server",
+          "transport": {
+            "type": "stdio"
+          },
+          "runtimeHint": "uvx"
+        }
+      ]
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.exa-labs/exa-mcp-server",
+      "title": "Exa Search",
+      "description": "Enables AI agents to perform web searches, code searches, and company research using the Exa Sear...",
+      "version": "0.1.0",
+      "repository": {
+        "url": "https://github.com/exa-labs/exa-mcp-server",
+        "source": "github"
+      },
+      "websiteUrl": "https://exa.ai/",
+      "_meta": {
+        "io.sami/gallery": {
+          "legacyId": "builtin-exa",
+          "icon": "search",
+          "iconBg": "#4F46E5",
+          "category": "Web Services",
+          "maintained": "vendor",
+          "toolsSummary": [
+            {
+              "name": "web_search_exa",
+              "description": "Search the web for any topic and get clean, ready-to-use content."
+            },
+            {
+              "name": "web_fetch_exa",
+              "description": "Get the full content of a specific webpage from a known URL."
+            },
+            {
+              "name": "web_search_advanced_exa",
+              "description": "Advanced web search with full control over filters, domains, dates, and content options."
+            }
+          ]
+        },
+        "io.sami/install": {
+          "configSnippet": "{\n  \"mcpServers\": {\n    \"builtin-exa\": {\n      \"command\": \"npx\",\n      \"args\": [\"exa-mcp-server\"]\n    }\n  }\n}"
+        }
+      },
+      "packages": [
+        {
+          "registryType": "npm",
+          "registryBaseUrl": "https://registry.npmjs.org",
+          "identifier": "exa-mcp-server",
+          "transport": {
+            "type": "stdio"
+          },
+          "runtimeHint": "npx",
+          "environmentVariables": [
+            {
+              "name": "EXA_API_KEY",
+              "description": "API key from dashboard.exa.ai/api-keys",
+              "isRequired": true,
+              "isSecret": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.modelcontextprotocol/servers",
+      "title": "Filesystem",
+      "description": "Provides secure access to the local filesystem for AI agents: read and write files, manage direct...",
+      "version": "0.1.0",
+      "repository": {
+        "url": "https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem",
+        "source": "github"
+      },
+      "websiteUrl": "https://modelcontextprotocol.io",
+      "_meta": {
+        "io.sami/gallery": {
+          "legacyId": "builtin-filesystem",
+          "icon": "folder-open",
+          "iconBg": "#10B981",
+          "category": "Data",
+          "maintained": "vendor",
+          "toolsSummary": [
+            {
+              "name": "read_file",
+              "description": "Read the complete contents of a file as text (deprecated: use read_text_file)."
+            },
+            {
+              "name": "read_text_file",
+              "description": "Read the complete contents of a file as text, with options for head or tail."
+            },
+            {
+              "name": "read_media_file",
+              "description": "Read an image or audio file as base64 encoded data with MIME type."
+            },
+            {
+              "name": "read_multiple_files",
+              "description": "Read the contents of multiple files simultaneously."
+            },
+            {
+              "name": "write_file",
+              "description": "Create or overwrite a file with new text content."
+            },
+            {
+              "name": "edit_file",
+              "description": "Make line-based edits to a text file with replacements."
+            },
+            {
+              "name": "create_directory",
+              "description": "Create a new directory, including nested paths."
+            },
+            {
+              "name": "list_directory",
+              "description": "List all files and directories in a path with [FILE] and [DIR] prefixes."
+            },
+            {
+              "name": "list_directory_with_sizes",
+              "description": "List files and directories in a path, including sizes, sorted by name or size."
+            },
+            {
+              "name": "directory_tree",
+              "description": "Get a recursive JSON tree view of files and directories."
+            },
+            {
+              "name": "move_file",
+              "description": "Move or rename files and directories to a new location."
+            },
+            {
+              "name": "search_files",
+              "description": "Recursively search for files matching a glob pattern."
+            },
+            {
+              "name": "get_file_info",
+              "description": "Retrieve metadata like size, times, and permissions for a file or directory."
+            },
+            {
+              "name": "list_allowed_directories",
+              "description": "List the directories this server is allowed to access."
+            }
+          ]
+        },
+        "io.sami/install": {
+          "configSnippet": "{\n  \"mcpServers\": {\n    \"builtin-filesystem\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"@modelcontextprotocol/server-filesystem\", \"${allowed_directories}\"]\n    }\n  }\n}"
+        }
+      },
+      "packages": [
+        {
+          "registryType": "npm",
+          "registryBaseUrl": "https://registry.npmjs.org",
+          "identifier": "@modelcontextprotocol/server-filesystem",
+          "transport": {
+            "type": "stdio"
+          },
+          "runtimeHint": "npx",
+          "environmentVariables": [
+            {
+              "name": "allowed_directories",
+              "description": "Comma-separated list of allowed directories the server can access",
+              "isRequired": true,
+              "isSecret": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.npm/excel-mcp-server",
+      "title": "Office Excel",
+      "description": "Read and edit Excel (.xlsx) workbooks without Microsoft Excel: worksheets, formulas, formatting,...",
+      "version": "0.1.0",
+      "websiteUrl": "https://excelmcpserver.com",
+      "_meta": {
+        "io.sami/gallery": {
+          "legacyId": "builtin-office-excel",
+          "icon": "excel",
+          "iconBg": "#107C41",
+          "category": "Data",
+          "maintained": "vendor",
+          "toolsSummary": [
+            {
+              "name": "apply_formula",
+              "description": "Apply Excel formula to cell with verification."
+            },
+            {
+              "name": "validate_formula_syntax",
+              "description": "Validate Excel formula syntax without applying it."
+            },
+            {
+              "name": "format_range",
+              "description": "Apply formatting to a range of cells."
+            },
+            {
+              "name": "read_data_from_excel",
+              "description": "Read data from Excel worksheet with cell metadata and validation rules."
+            },
+            {
+              "name": "write_data_to_excel",
+              "description": "Write data to Excel worksheet."
+            },
+            {
+              "name": "create_workbook",
+              "description": "Create new Excel workbook."
+            },
+            {
+              "name": "create_worksheet",
+              "description": "Create new worksheet in workbook."
+            },
+            {
+              "name": "create_chart",
+              "description": "Create chart in worksheet."
+            },
+            {
+              "name": "create_pivot_table",
+              "description": "Create pivot table in worksheet."
+            },
+            {
+              "name": "create_table",
+              "description": "Creates a native Excel table from a specified range of data."
+            },
+            {
+              "name": "copy_worksheet",
+              "description": "Copy worksheet within workbook."
+            },
+            {
+              "name": "delete_worksheet",
+              "description": "Delete worksheet from workbook."
+            },
+            {
+              "name": "rename_worksheet",
+              "description": "Rename worksheet in workbook."
+            },
+            {
+              "name": "get_workbook_metadata",
+              "description": "Get metadata about workbook including sheets, ranges, etc."
+            },
+            {
+              "name": "merge_cells",
+              "description": "Merge a range of cells."
+            },
+            {
+              "name": "unmerge_cells",
+              "description": "Unmerge a range of cells."
+            },
+            {
+              "name": "get_merged_cells",
+              "description": "Get merged cells in a worksheet."
+            },
+            {
+              "name": "copy_range",
+              "description": "Copy a range of cells to another location."
+            },
+            {
+              "name": "delete_range",
+              "description": "Delete a range of cells and shift remaining cells."
+            },
+            {
+              "name": "validate_excel_range",
+              "description": "Validate if a range exists and is properly formatted."
+            },
+            {
+              "name": "get_data_validation_info",
+              "description": "Get all data validation rules in a worksheet."
+            },
+            {
+              "name": "insert_rows",
+              "description": "Insert one or more rows starting at the specified row."
+            },
+            {
+              "name": "insert_columns",
+              "description": "Insert one or more columns starting at the specified column."
+            },
+            {
+              "name": "delete_sheet_rows",
+              "description": "Delete one or more rows starting at the specified row."
+            },
+            {
+              "name": "delete_sheet_columns",
+              "description": "Delete one or more columns starting at the specified column."
+            }
+          ]
+        },
+        "io.sami/install": {
+          "configSnippet": "{\n  \"mcpServers\": {\n    \"builtin-office-excel\": {\n      \"command\": \"uvx\",\n      \"args\": [\"excel-mcp-server\", \"stdio\"]\n    }\n  }\n}"
+        }
+      },
+      "packages": [
+        {
+          "registryType": "pypi",
+          "registryBaseUrl": "https://pypi.org",
+          "identifier": "excel-mcp-server",
+          "transport": {
+            "type": "stdio"
+          },
+          "runtimeHint": "uvx"
+        }
+      ]
+    }
+  ]
+}
