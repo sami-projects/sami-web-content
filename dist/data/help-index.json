@@ -1,108 +1,144 @@
 {
-  "generatedAt": "2026-04-23T20:46:41.916Z",
+  "generatedAt": "2026-04-23T22:07:29.279Z",
   "totalPages": 17,
+  "navSlugs": [
+    "overview",
+    "getting-started",
+    "getting-started/first-agent",
+    "getting-started/configuration",
+    "agents",
+    "prompt-placeholders",
+    "tools",
+    "gallery",
+    "llm-accounts",
+    "ai-assistant",
+    "settings",
+    "automation",
+    "automation/cli",
+    "automation/rest-api",
+    "troubleshooting",
+    "contact",
+    "README"
+  ],
   "pages": [
     {
-      "slug": "agents",
-      "path": "agents.md",
-      "title": "Agents",
-      "hash": "59374e81b4883f4ecb5e5c438fef1b129927e5cfbe79a6d031f558d8ad39e8a6"
-    },
-    {
-      "slug": "ai-assistant",
-      "path": "ai-assistant.md",
-      "title": "AI Assistant",
-      "hash": "a1ce3231faffde9ea84e75372c0f6bd94054085fb5112ca08a88024c2f546fb3"
-    },
-    {
-      "slug": "automation",
-      "path": "automation/index.md",
-      "title": "Automation (CLI & API)",
-      "hash": "d3144204ae1fca17b0c1aaa5112884558787c44f03c11e85fa57f4137ee6f44f"
-    },
-    {
-      "slug": "automation/cli",
-      "path": "automation/cli.md",
-      "title": "CLI",
-      "hash": "bbe3ffb392ca2184465c171b33c1ad10ad467f39a7568b0853c34a93d34c8e56"
-    },
-    {
-      "slug": "automation/rest-api",
-      "path": "automation/rest-api.md",
-      "title": "REST API",
-      "hash": "e0a0912487fdaf137efc3707aabbfdf22bb9e3906166a6d6faade62174426d80"
-    },
-    {
-      "slug": "contact",
-      "path": "contact.md",
-      "title": "Contact",
-      "hash": "6009cb5839ceb1576976bb4d7215422933c721b751dea626adaaaa3f23fea994"
-    },
-    {
-      "slug": "gallery",
-      "path": "gallery.md",
-      "title": "Tool Gallery",
-      "hash": "79b58faa3944f678f260a47d89c37230151571092e991fd8c07c246bc13c5071"
+      "slug": "overview",
+      "path": "overview.md",
+      "title": "Overview",
+      "hash": "f1eec399b085d64e1b7afae3491c18d7020b73d8a151624e905f8b13e1638f18",
+      "order": 0
     },
     {
       "slug": "getting-started",
       "path": "getting-started/index.md",
       "title": "Getting Started",
-      "hash": "44776e1e1e4171b3a09f00cd30e6002a24a745df707af7751c0aa11288e772c2"
-    },
-    {
-      "slug": "getting-started/configuration",
-      "path": "getting-started/configuration.md",
-      "title": "Configuration",
-      "hash": "124386000e9500723368f2a7818ed47ea9a0c1272d04887141c94ffdc983fe7a"
+      "hash": "44776e1e1e4171b3a09f00cd30e6002a24a745df707af7751c0aa11288e772c2",
+      "order": 1
     },
     {
       "slug": "getting-started/first-agent",
       "path": "getting-started/first-agent.md",
       "title": "Your First Agent",
-      "hash": "1650b8254ce38e454b49a08b3ad9501b668e6c9e8ee6278f41a49c376580447a"
+      "hash": "1650b8254ce38e454b49a08b3ad9501b668e6c9e8ee6278f41a49c376580447a",
+      "order": 2
     },
     {
-      "slug": "llm-accounts",
-      "path": "llm-accounts.md",
-      "title": "LLM Accounts",
-      "hash": "2dc9a0dfb78339a0b3f1516abef70ae46c5b64f012ba646b977dbd5f5be6ff47"
+      "slug": "getting-started/configuration",
+      "path": "getting-started/configuration.md",
+      "title": "Configuration",
+      "hash": "124386000e9500723368f2a7818ed47ea9a0c1272d04887141c94ffdc983fe7a",
+      "order": 3
     },
     {
-      "slug": "overview",
-      "path": "overview.md",
-      "title": "Overview",
-      "hash": "f1eec399b085d64e1b7afae3491c18d7020b73d8a151624e905f8b13e1638f18"
+      "slug": "agents",
+      "path": "agents.md",
+      "title": "Agents",
+      "hash": "59374e81b4883f4ecb5e5c438fef1b129927e5cfbe79a6d031f558d8ad39e8a6",
+      "order": 4
     },
     {
       "slug": "prompt-placeholders",
       "path": "prompt-placeholders.md",
       "title": "Prompt and placeholders",
-      "hash": "f50070bf4c454142c667df8cc232fc928b6d565aaddaa2f509c9456c79a23335"
-    },
-    {
-      "slug": "README",
-      "path": "README.md",
-      "title": "Help Docs Workflow",
-      "hash": "ebc74c73abae5351770bb5b80a1e75f9003164294e59808c01feba6a65fdb85a"
-    },
-    {
-      "slug": "settings",
-      "path": "settings.md",
-      "title": "Settings",
-      "hash": "783eae76cc5c18fe328463d9e83acb276f993bd3283125da2016b9642290d0af"
+      "hash": "f50070bf4c454142c667df8cc232fc928b6d565aaddaa2f509c9456c79a23335",
+      "order": 5
     },
     {
       "slug": "tools",
       "path": "tools.md",
       "title": "Tools",
-      "hash": "64c571765844dae668e3b8b16fb931b00979a3432816765f7213900a80bacc1d"
+      "hash": "64c571765844dae668e3b8b16fb931b00979a3432816765f7213900a80bacc1d",
+      "order": 6
+    },
+    {
+      "slug": "gallery",
+      "path": "gallery.md",
+      "title": "Tool Gallery",
+      "hash": "79b58faa3944f678f260a47d89c37230151571092e991fd8c07c246bc13c5071",
+      "order": 7
+    },
+    {
+      "slug": "llm-accounts",
+      "path": "llm-accounts.md",
+      "title": "LLM Accounts",
+      "hash": "2dc9a0dfb78339a0b3f1516abef70ae46c5b64f012ba646b977dbd5f5be6ff47",
+      "order": 8
+    },
+    {
+      "slug": "ai-assistant",
+      "path": "ai-assistant.md",
+      "title": "AI Assistant",
+      "hash": "a1ce3231faffde9ea84e75372c0f6bd94054085fb5112ca08a88024c2f546fb3",
+      "order": 9
+    },
+    {
+      "slug": "settings",
+      "path": "settings.md",
+      "title": "Settings",
+      "hash": "783eae76cc5c18fe328463d9e83acb276f993bd3283125da2016b9642290d0af",
+      "order": 10
+    },
+    {
+      "slug": "automation",
+      "path": "automation/index.md",
+      "title": "Automation (CLI & API)",
+      "hash": "d3144204ae1fca17b0c1aaa5112884558787c44f03c11e85fa57f4137ee6f44f",
+      "order": 11
+    },
+    {
+      "slug": "automation/cli",
+      "path": "automation/cli.md",
+      "title": "CLI",
+      "hash": "bbe3ffb392ca2184465c171b33c1ad10ad467f39a7568b0853c34a93d34c8e56",
+      "order": 12
+    },
+    {
+      "slug": "automation/rest-api",
+      "path": "automation/rest-api.md",
+      "title": "REST API",
+      "hash": "e0a0912487fdaf137efc3707aabbfdf22bb9e3906166a6d6faade62174426d80",
+      "order": 13
     },
     {
       "slug": "troubleshooting",
       "path": "troubleshooting.md",
       "title": "Troubleshooting",
-      "hash": "aeb720f1559cb08b81947195260c01d92c3a7c4f0e0990a643174a067c8a1b87"
+      "hash": "aeb720f1559cb08b81947195260c01d92c3a7c4f0e0990a643174a067c8a1b87",
+      "order": 14
+    },
+    {
+      "slug": "contact",
+      "path": "contact.md",
+      "title": "Contact",
+      "hash": "6009cb5839ceb1576976bb4d7215422933c721b751dea626adaaaa3f23fea994",
+      "order": 15
+    },
+    {
+      "slug": "README",
+      "path": "README.md",
+      "title": "Help Docs Workflow",
+      "hash": "ebc74c73abae5351770bb5b80a1e75f9003164294e59808c01feba6a65fdb85a",
+      "order": 10013
     }
   ]
 }
