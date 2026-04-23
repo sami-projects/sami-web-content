@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-04-23T22:07:29.281Z",
+  "generatedAt": "2026-04-23T22:45:43.073Z",
   "sections": {
     "help": {
       "index": "data/help-index.json",
@@ -12,14 +12,14 @@
     },
     "mcpRegistry": {
       "file": "data/mcp-registry.json",
-      "hash": "9f3bd54e1eb3f2db2ca06b327a6ef2b82b788e41c4e914c09e5cad5bf4fed7e1",
-      "totalServers": 15,
+      "hash": "bfe8e3ef81e25fc4c493047220c0775c9177d5205f1840e7ae7c8f19cebc30d1",
+      "totalServers": 18,
       "source": "sami-mcp-gallery"
     },
     "mcpIcons": {
       "root": "icons/",
-      "hash": "f2a5fc14d20edf94e7fe6f0f179980ba4a8ca9439360c78e6548a6f77f453bd0",
-      "fileCount": 5
+      "hash": "c2eb098c6552be046768a8a7204d85706405d9aa4469c78a1af1b35c8ff2273c",
+      "fileCount": 9
     }
   }
 }

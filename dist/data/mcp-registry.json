@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-04-23T22:07:29.285Z",
+  "generatedAt": "2026-04-23T22:45:43.077Z",
   "source": "sami-mcp-gallery",
-  "totalServers": 15,
+  "totalServers": 18,
   "servers": [
     {
       "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
@@ -903,7 +903,7 @@
       "_meta": {
         "io.sami/gallery": {
           "legacyId": "builtin-duckdb",
-          "icon": "database",
+          "icon": "duckdb",
           "iconBg": "#10B981",
           "category": "Data",
           "maintained": "community",
@@ -1050,6 +1050,47 @@
     },
     {
       "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "pypi/mcp-server-fetch",
+      "title": "Fetch",
+      "description": "Retrieves web pages and converts HTML to markdown for LLM use. Supports chunked reads via start_index. Exercise caution: may reach internal URLs.",
+      "version": "0.1.0",
+      "repository": {
+        "url": "https://github.com/modelcontextprotocol/servers",
+        "source": "github"
+      },
+      "websiteUrl": "https://github.com/modelcontextprotocol/servers/tree/main/src/fetch",
+      "_meta": {
+        "io.sami/gallery": {
+          "legacyId": "builtin-fetch",
+          "icon": "mcp-fetch",
+          "iconBg": "#E8EAEF",
+          "category": "Web",
+          "maintained": "vendor",
+          "toolsSummary": [
+            {
+              "name": "fetch",
+              "description": "Fetch a URL and return content as markdown (optional max_length, start_index, raw)."
+            }
+          ]
+        },
+        "io.sami/install": {
+          "configSnippet": "{\n  \"mcpServers\": {\n    \"builtin-fetch\": {\n      \"command\": \"uvx\",\n      \"args\": [\"mcp-server-fetch\"],\n      \"type\": \"stdio\"\n    }\n  }\n}"
+        }
+      },
+      "packages": [
+        {
+          "registryType": "pypi",
+          "registryBaseUrl": "https://pypi.org",
+          "identifier": "mcp-server-fetch",
+          "transport": {
+            "type": "stdio"
+          },
+          "runtimeHint": "uvx"
+        }
+      ]
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
       "name": "io.github.modelcontextprotocol/servers",
       "title": "Filesystem",
       "description": "Provides secure access to the local filesystem for AI agents: read and write files, manage direct...",
@@ -1144,6 +1185,122 @@
               "description": "Comma-separated list of allowed directories the server can access",
               "isRequired": true,
               "isSecret": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "io.github.github/github-mcp-server",
+      "title": "GitHub",
+      "description": "Remote GitHub MCP hosted by GitHub: repositories, issues, pull requests, Actions, security, and workflows. Authenticate via OAuth where supported or a Personal Access Token.",
+      "version": "0.1.0",
+      "repository": {
+        "url": "https://github.com/github/github-mcp-server",
+        "source": "github"
+      },
+      "websiteUrl": "https://github.com/github/github-mcp-server",
+      "_meta": {
+        "io.sami/gallery": {
+          "legacyId": "builtin-github",
+          "icon": "github",
+          "iconBg": "#1F2328",
+          "category": "Development",
+          "maintained": "vendor",
+          "toolsSummary": [
+            {
+              "name": "default_toolsets",
+              "description": "Repos, issues, pull requests, and related APIs; exact tool names depend on host configuration and enabled toolsets."
+            },
+            {
+              "name": "optional_toolsets",
+              "description": "Additional groups such as actions, code_security, dependabot, notifications — enable per GitHub MCP remote documentation."
+            },
+            {
+              "name": "authentication",
+              "description": "OAuth where the host supports it, or Bearer PAT (e.g. github_mcp_pat) for token-based access."
+            }
+          ]
+        },
+        "io.sami/install": {
+          "configSnippet": "{\n  \"mcpServers\": {\n    \"builtin-github\": {\n      \"url\": \"https://api.githubcopilot.com/mcp/\",\n      \"type\": \"http-stream\"\n    }\n  }\n}"
+        }
+      },
+      "remotes": [
+        {
+          "type": "streamable-http",
+          "url": "https://api.githubcopilot.com/mcp/",
+          "description": "GitHub-hosted remote MCP (Copilot). Use PAT or OAuth per client documentation."
+        }
+      ]
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "npm/@notionhq/notion-mcp-server",
+      "title": "Notion",
+      "description": "Notion workspace integration via the Notion API: pages, databases (data sources), search, and comments. Requires an integration token with page/database access.",
+      "version": "0.1.0",
+      "repository": {
+        "url": "https://github.com/makenotion/notion-mcp-server",
+        "source": "github"
+      },
+      "websiteUrl": "https://developers.notion.com/docs/mcp",
+      "_meta": {
+        "io.sami/gallery": {
+          "legacyId": "builtin-notion",
+          "icon": "notion",
+          "iconBg": "#FFFFFF",
+          "category": "Productivity",
+          "maintained": "vendor",
+          "toolsSummary": [
+            {
+              "name": "query-data-source",
+              "description": "Query a data source (database) with filters and sorts (API 2025-09-03+)."
+            },
+            {
+              "name": "retrieve-a-page",
+              "description": "Read page content and properties."
+            },
+            {
+              "name": "search",
+              "description": "Search pages and data sources across the workspace."
+            },
+            {
+              "name": "move-page",
+              "description": "Move a page to another parent."
+            },
+            {
+              "name": "create-a-page",
+              "description": "Create pages under a parent page or database."
+            }
+          ]
+        },
+        "io.sami/install": {
+          "configSnippet": "{\n  \"mcpServers\": {\n    \"builtin-notion\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"@notionhq/notion-mcp-server\"],\n      \"type\": \"stdio\"\n    }\n  }\n}"
+        }
+      },
+      "packages": [
+        {
+          "registryType": "npm",
+          "registryBaseUrl": "https://registry.npmjs.org",
+          "identifier": "@notionhq/notion-mcp-server",
+          "transport": {
+            "type": "stdio"
+          },
+          "runtimeHint": "npx",
+          "environmentVariables": [
+            {
+              "name": "NOTION_TOKEN",
+              "description": "Notion integration secret (ntn_…); create at notion.so/profile/integrations",
+              "isRequired": true,
+              "isSecret": true
+            },
+            {
+              "name": "OPENAPI_MCP_HEADERS",
+              "description": "Advanced: JSON headers instead of NOTION_TOKEN (Bearer + Notion-Version).",
+              "isRequired": false,
+              "isSecret": true
             }
           ]
         }
