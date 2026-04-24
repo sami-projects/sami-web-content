@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-04-23T22:45:43.077Z",
+  "generatedAt": "2026-04-23T23:56:19.673Z",
   "source": "sami-mcp-gallery",
   "totalServers": 18,
   "servers": [
     {
       "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
       "name": "io.github.blazickjp/arxiv-mcp-server",
-      "title": "arXiv MCP Server",
-      "description": "MCP server for arXiv search, downloads, semantic lookup, and citation exploration.",
+      "title": "ArXiv",
+      "description": "Search and analyze academic papers from the arXiv repository.",
       "version": "0.1.0",
       "repository": {
         "url": "https://github.com/blazickjp/arxiv-mcp-server",
@@ -31,7 +31,7 @@
           "legacyId": "builtin-arxiv-search",
           "icon": "file-text",
           "iconBg": "#00AA00",
-          "category": "Web Services",
+          "category": "Web",
           "maintained": "community",
           "toolsSummary": [
             {
@@ -74,7 +74,9 @@
               "name": "check_alerts",
               "description": "Check topic watches for newly published papers."
             }
-          ]
+          ],
+          "about": "Enables AI agents to search and analyze academic papers from the arXiv repository: query with advanced filters, download and read full texts, perform semantic searches on local collections, monitor topics with alerts, and explore citation graphs. Perfect for literature reviews, staying current on research, and academic workflows.",
+          "vendorLabel": "arXiv"
         },
         "io.sami/install": {
           "configSnippet": "{\n  \"mcpServers\": {\n    \"builtin-arxiv-search\": {\n      \"command\": \"uvx\",\n      \"args\": [\"arxiv-mcp-server\"]\n    }\n  }\n}"
@@ -85,7 +87,7 @@
       "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
       "name": "io.github.roychri/mcp-server-asana",
       "title": "Asana",
-      "description": "MCP server for Asana task, project, and workflow management automation.",
+      "description": "Tasks, projects, and teamwork in Asana.",
       "version": "0.1.0",
       "repository": {
         "url": "https://github.com/roychri/mcp-server-asana",
@@ -123,7 +125,7 @@
           "legacyId": "builtin-asana",
           "icon": "asana",
           "iconBg": "#174A6F",
-          "category": "Development",
+          "category": "Productivity",
           "maintained": "community",
           "toolsSummary": [
             {
@@ -158,7 +160,9 @@
               "name": "asana_get_tasks_for_project",
               "description": "List tasks for a specific project."
             }
-          ]
+          ],
+          "about": "Integrates with Asana to enable task automation, project tracking, and team collaboration through the Asana API. Allows AI agents to list workspaces, search and manage tasks, projects, tags, sections, and more via MCP tools.",
+          "vendorLabel": "Asana Developer Platform"
         },
         "io.sami/install": {
           "configSnippet": "{\n  \"mcpServers\": {\n    \"asana\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"@roychri/mcp-server-asana\"]\n    }\n  }\n}"
@@ -169,15 +173,16 @@
       "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
       "name": "io.sami/builtin-asana-oauth",
       "title": "Asana",
-      "description": "Asana Official MCP Server. Enables AI agents to interact with Asana workspaces: access data, crea...",
+      "subtitle": "browser login",
+      "description": "Work management and team collaboration in Asana.",
       "version": "0.1.0",
-      "websiteUrl": "https://developers.asana.com/docs",
+      "websiteUrl": "https://developers.asana.com/docs/using-asanas-mcp-server",
       "_meta": {
         "io.sami/gallery": {
           "legacyId": "builtin-asana-oauth",
           "icon": "asana",
           "iconBg": "#ee5f2b",
-          "category": "Development",
+          "category": "Productivity",
           "maintained": "vendor",
           "toolsSummary": [
             {
@@ -220,7 +225,9 @@
               "name": "generate_report",
               "description": "Create reports based on Asana data."
             }
-          ]
+          ],
+          "about": "Asana Official MCP Server. Enables AI agents to interact with Asana workspaces: access data, create and manage tasks and projects, generate reports, and get AI-powered insights through natural language commands. Useful for work management, team collaboration, and automated task handling.",
+          "vendorLabel": "Asana Developer Portal"
         },
         "io.sami/install": {
           "configSnippet": "{\n  \"mcpServers\": {\n    \"builtin-asana-oauth\": {\n      \"url\": \"https://mcp.asana.com/sse\",\n      \"type\": \"sse\"\n    }\n  }\n}"
@@ -237,19 +244,19 @@
       "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
       "name": "io.github.brave/brave-search-mcp-server",
       "title": "Brave Search",
-      "description": "Integrates Brave's Search API to provide web search, local business search, image search, video s...",
+      "description": "Web, news, images, video, local results, and summaries via Brave Search.",
       "version": "0.1.0",
       "repository": {
         "url": "https://github.com/brave/brave-search-mcp-server",
         "source": "github"
       },
-      "websiteUrl": "https://api.search.brave.com/",
+      "websiteUrl": "https://github.com/brave/brave-search-mcp-server",
       "_meta": {
         "io.sami/gallery": {
           "legacyId": "builtin-brave",
           "icon": "brave",
           "iconBg": "#FB542B",
-          "category": "Web Services",
+          "category": "Web",
           "maintained": "vendor",
           "toolsSummary": [
             {
@@ -276,7 +283,9 @@
               "name": "brave_summarizer",
               "description": "Generates AI-powered summaries from web search results using Brave's summarization API."
             }
-          ]
+          ],
+          "about": "Integrates Brave's Search API to provide web search, local business search, image search, video search, news search, and summarization capabilities.",
+          "vendorLabel": "Brave Search API"
         },
         "io.sami/install": {
           "configSnippet": "{\n  \"mcpServers\": {\n    \"builtin-brave\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"@brave/brave-search-mcp-server\", \"--transport\", \"http\"],\n      \"env\": {\n        \"BRAVE_API_KEY\": \"YOUR_API_KEY_HERE\"\n      }\n    }\n  }\n}"
@@ -318,27 +327,29 @@
     },
     {
       "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-      "name": "io.github.iqaicom/mcp-calculator",
+      "name": "pypi/mcp-server-calculator",
       "title": "Calculator",
-      "description": "Precise numerical calculations and expression evaluation. Enables AI agents to perform accurate m...",
+      "description": "Precise numerical calculations and expression evaluation.",
       "version": "0.1.0",
       "repository": {
-        "url": "https://github.com/IQAIcom/mcp-calculator",
+        "url": "https://github.com/githejie/mcp-server-calculator",
         "source": "github"
       },
+      "websiteUrl": "https://github.com/githejie/mcp-server-calculator",
       "_meta": {
         "io.sami/gallery": {
           "legacyId": "builtin-calculator",
           "icon": "calculator",
           "iconBg": "#2196F3",
           "category": "Utilities",
-          "maintained": "vendor",
+          "maintained": "community",
           "toolsSummary": [
             {
               "name": "calculate",
               "description": "Calculates/evaluates the given expression."
             }
-          ]
+          ],
+          "about": "Precise numerical calculations and expression evaluation. Enables AI agents to perform accurate math operations, handle complex expressions, and ensure precision in computational tasks."
         },
         "io.sami/install": {
           "configSnippet": "{\n  \"mcpServers\": {\n    \"builtin-calculator\": {\n      \"command\": \"uvx\",\n      \"args\": [\"mcp-server-calculator\"]\n    }\n  }\n}"
@@ -360,13 +371,13 @@
       "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
       "name": "io.github.chromedevtools/chrome-devtools-mcp",
       "title": "Chrome DevTools",
-      "description": "Provides direct Chrome browser control through DevTools for web automation, debugging, and perfor...",
+      "description": "Control Chrome through DevTools: automate pages, inspect the tree, debug, and profile performance.",
       "version": "0.1.0",
       "repository": {
         "url": "https://github.com/chromedevtools/chrome-devtools-mcp",
         "source": "github"
       },
-      "websiteUrl": "https://developer.chrome.com/docs/devtools/",
+      "websiteUrl": "https://github.com/chromedevtools/chrome-devtools-mcp",
       "_meta": {
         "io.sami/gallery": {
           "legacyId": "builtin-chrome-devtools",
@@ -491,7 +502,9 @@
               "name": "wait_for",
               "description": "Wait for the specified text to appear on the selected page."
             }
-          ]
+          ],
+          "about": "Provides direct Chrome browser control through DevTools for web automation, debugging, and performance analysis using accessibility tree snapshots for reliable element targeting, automatic page event handling, and integrated performance tracing with actionable insights.",
+          "vendorLabel": "Chrome DevTools Documentation"
         },
         "io.sami/install": {
           "configSnippet": "{\n  \"mcpServers\": {\n    \"builtin-chrome-devtools\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"chrome-devtools-mcp@latest\"]\n    }\n  }\n}"
@@ -513,7 +526,7 @@
       "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
       "name": "io.github.mladensu/cli-mcp-server",
       "title": "CLI Secure",
-      "description": "Execute shell commands with strict security policies in a sandboxed environment. Supports running...",
+      "description": "Execute shell commands with strict security policies.",
       "version": "0.1.0",
       "repository": {
         "url": "https://github.com/mladensu/cli-mcp-server",
@@ -530,13 +543,15 @@
           "toolsSummary": [
             {
               "name": "run_command",
-              "description": "Execute a single secure CLI command in the sandboxed directory D:\\mcpSandbox. Available commands: ls, cat, pwd, echo. Available flags: --version, -l, -a, --help. Shell operators are not supported."
+              "description": "Execute a single secure CLI command in the configured sandbox directory. Allowlists for commands and flags apply; shell operators are disabled by default."
             },
             {
               "name": "show_security_rules",
               "description": "Show the security configuration, including allowed commands, flags, limits, and working directory."
             }
-          ]
+          ],
+          "about": "Execute shell commands with strict security policies in a sandboxed environment. Supports running limited CLI commands like ls, cat, pwd, echo with specific flags, ensuring safe command execution for AI agents.",
+          "vendorLabel": "CLI Secure GitHub"
         },
         "io.sami/install": {
           "configSnippet": "{\n  \"mcpServers\": {\n    \"builtin-cli-sequre\": {\n      \"command\": \"uvx\",\n      \"args\": [\"cli-mcp-server\"],\n      \"env\": {\n        \"ALLOWED_COMMANDS\": \"ls,cat,pwd,echo\",\n        \"ALLOWED_FLAGS\": \"-l,-a,--help,--version\",\n        \"MAX_COMMAND_LENGTH\": \"1024\",\n        \"COMMAND_TIMEOUT\": \"30\",\n        \"ALLOW_SHELL_OPERATORS\": \"false\"\n      }\n    }\n  }\n}"
@@ -601,7 +616,7 @@
       "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
       "name": "io.github.upstash/context7",
       "title": "Context7",
-      "description": "Provides access to up-to-date code documentation and examples for various programming libraries a...",
+      "description": "Up-to-date code documentation for LLMs and AI code editors.",
       "version": "0.1.0",
       "repository": {
         "url": "https://github.com/upstash/context7",
@@ -624,7 +639,9 @@
               "name": "query-docs",
               "description": "Query up-to-date documentation and code examples for a specified library."
             }
-          ]
+          ],
+          "about": "Provides access to up-to-date code documentation and examples for various programming libraries and frameworks. Enables AI agents to resolve library IDs and query detailed docs, code snippets, and usage examples directly. Ideal for assisting in code writing, debugging, and learning new technologies.",
+          "vendorLabel": "Context7 GitHub"
         },
         "io.sami/install": {
           "configSnippet": "{\n  \"mcpServers\": {\n    \"builtin-context7\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"@upstash/context7-mcp\"]\n    }\n  }\n}"
@@ -652,15 +669,15 @@
     },
     {
       "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
-      "name": "io.github.mcp/wonderwhy-er",
+      "name": "io.github.mcp/wonderwhy-er-desktop-commander",
       "title": "Desktop Commander MCP",
-      "description": "Integrates terminal and filesystem capabilities for executing system commands, managing processes...",
+      "description": "Local shell commands, processes, and advanced file operations on this machine.",
       "version": "0.1.0",
       "repository": {
         "url": "https://github.com/mcp/wonderwhy-er/desktop-commander",
         "source": "github"
       },
-      "websiteUrl": "https://www.npmjs.com/package/@wonderwhy-er/desktop-commander",
+      "websiteUrl": "https://github.com/mcp/wonderwhy-er/desktop-commander",
       "_meta": {
         "io.sami/gallery": {
           "legacyId": "builtin-desktop-commander",
@@ -737,7 +754,9 @@
               "name": "kill_process",
               "description": "Terminate processes by PID."
             }
-          ]
+          ],
+          "about": "Integrates terminal and filesystem capabilities for executing system commands, managing processes, and performing advanced file operations on the local system. Enables AI agents to read/write files, run shell commands, search directories, and manage processes securely within allowed paths.",
+          "vendorLabel": "Desktop Commander npm"
         },
         "io.sami/install": {
           "configSnippet": "{\n  \"mcpServers\": {\n    \"builtin-desktop-commander\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"@wonderwhy-er/desktop-commander@latest\"]\n    }\n  }\n}"
@@ -788,13 +807,13 @@
       "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
       "name": "io.github.iqaicom/mcp-discord",
       "title": "Discord",
-      "description": "MCP server for Discord messaging, channels, reactions, and moderation workflows.",
+      "description": "Discord servers: channels, messages, reactions, forums, webhooks, and moderation basics.",
       "version": "0.1.0",
       "repository": {
         "url": "https://github.com/iqaicom/mcp-discord",
         "source": "github"
       },
-      "websiteUrl": "https://discord.com/developers/docs",
+      "websiteUrl": "https://github.com/iqaicom/mcp-discord",
       "packages": [
         {
           "registryType": "npm",
@@ -882,7 +901,9 @@
               "name": "add_reaction",
               "description": "Add one or more emoji reactions to a message."
             }
-          ]
+          ],
+          "about": "Integrates with Discord to provide capabilities including message management, channel operations, forum posts, reactions, webhooks, and server administration with automatic reconnection and rate limiting protection.",
+          "vendorLabel": "Discord Developer Portal"
         },
         "io.sami/install": {
           "configSnippet": "{\n  \"mcpServers\": {\n    \"discord\": {\n      \"command\": \"npx\",\n      \"args\": [\"@iqai/mcp-discord\"],\n      \"env\": {\n        \"DISCORD_TOKEN\": \"YOUR_DISCORD_TOKEN\"\n      }\n    }\n  }\n}"
@@ -893,7 +914,7 @@
       "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
       "name": "io.github.ktanaka101/mcp-server-duckdb",
       "title": "DuckDB",
-      "description": "Enables AI agents to interact with DuckDB databases: execute SQL queries for data analysis, schem...",
+      "description": "Execute SQL queries and analyze data in DuckDB databases.",
       "version": "0.1.0",
       "repository": {
         "url": "https://github.com/ktanaka101/mcp-server-duckdb",
@@ -912,7 +933,9 @@
               "name": "query",
               "description": "Execute any SQL query on the DuckDB database. Supports SELECT for querying, CREATE/INSERT/UPDATE/DELETE for modifications (if not read-only), and other SQL operations. Input: query (string). Output: Results as text or success message."
             }
-          ]
+          ],
+          "about": "Enables AI agents to interact with DuckDB databases: execute SQL queries for data analysis, schema inspection, table creation, and other database operations through MCP tools. Ideal for local data processing, querying various file formats like CSV and Parquet, and integrating analytics into AI workflows.",
+          "vendorLabel": "DuckDB"
         },
         "io.sami/install": {
           "configSnippet": "{\n  \"mcpServers\": {\n    \"builtin-duckdb\": {\n      \"command\": \"uvx\",\n      \"args\": [\"mcp-server-duckdb\", \"--db-path\", \"YOUR_DB_PATH\"]\n    }\n  }\n}"
@@ -950,7 +973,7 @@
       "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
       "name": "io.github.nickclyde/duckduckgo-mcp-server",
       "title": "DuckDuckGo Search",
-      "description": "Provides web search capabilities through DuckDuckGo, with additional features for content fetchin...",
+      "description": "Web search and lightweight page retrieval via DuckDuckGo.",
       "version": "0.1.0",
       "repository": {
         "url": "https://github.com/nickclyde/duckduckgo-mcp-server",
@@ -962,7 +985,7 @@
           "legacyId": "builtin-duckduckgo",
           "icon": "duckduckgo",
           "iconBg": "#DE5833",
-          "category": "Web Services",
+          "category": "Web",
           "maintained": "community",
           "toolsSummary": [
             {
@@ -973,7 +996,9 @@
               "name": "fetch_content",
               "description": "Fetch and extract the main text content from a webpage. Strips out navigation, headers, footers, scripts, and styles to return clean readable text."
             }
-          ]
+          ],
+          "about": "Provides web search capabilities through DuckDuckGo, with additional features for content fetching and parsing.",
+          "vendorLabel": "DuckDuckGo"
         },
         "io.sami/install": {
           "configSnippet": "{\n  \"mcpServers\": {\n    \"builtin-duckduckgo\": {\n      \"command\": \"uvx\",\n      \"args\": [\"duckduckgo-mcp-server\"]\n    }\n  }\n}"
@@ -995,7 +1020,7 @@
       "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
       "name": "io.github.exa-labs/exa-mcp-server",
       "title": "Exa Search",
-      "description": "Enables AI agents to perform web searches, code searches, and company research using the Exa Sear...",
+      "description": "Web, code snippet, and company search via the Exa API.",
       "version": "0.1.0",
       "repository": {
         "url": "https://github.com/exa-labs/exa-mcp-server",
@@ -1007,7 +1032,7 @@
           "legacyId": "builtin-exa",
           "icon": "search",
           "iconBg": "#4F46E5",
-          "category": "Web Services",
+          "category": "Web",
           "maintained": "vendor",
           "toolsSummary": [
             {
@@ -1022,7 +1047,9 @@
               "name": "web_search_advanced_exa",
               "description": "Advanced web search with full control over filters, domains, dates, and content options."
             }
-          ]
+          ],
+          "about": "Enables AI agents to perform web searches, code searches, and company research using the Exa Search API through MCP tools. Ideal for information retrieval, research automation, and data gathering workflows.",
+          "vendorLabel": "Exa AI"
         },
         "io.sami/install": {
           "configSnippet": "{\n  \"mcpServers\": {\n    \"builtin-exa\": {\n      \"command\": \"npx\",\n      \"args\": [\"exa-mcp-server\"]\n    }\n  }\n}"
@@ -1052,7 +1079,8 @@
       "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
       "name": "pypi/mcp-server-fetch",
       "title": "Fetch",
-      "description": "Retrieves web pages and converts HTML to markdown for LLM use. Supports chunked reads via start_index. Exercise caution: may reach internal URLs.",
+      "subtitle": "May reach internal networks — assess trust and exposure.",
+      "description": "Retrieve and process web content, converting HTML to markdown for LLM consumption.",
       "version": "0.1.0",
       "repository": {
         "url": "https://github.com/modelcontextprotocol/servers",
@@ -1070,6 +1098,10 @@
             {
               "name": "fetch",
               "description": "Fetch a URL and return content as markdown (optional max_length, start_index, raw)."
+            },
+            {
+              "name": "robots_txt",
+              "description": "By default obeys robots.txt for model-initiated requests; override or proxy behavior per upstream server README."
             }
           ]
         },
@@ -1093,13 +1125,13 @@
       "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
       "name": "io.github.modelcontextprotocol/servers",
       "title": "Filesystem",
-      "description": "Provides secure access to the local filesystem for AI agents: read and write files, manage direct...",
+      "description": "Read, write, and manage local files and directories within user-configured allowed paths.",
       "version": "0.1.0",
       "repository": {
         "url": "https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem",
         "source": "github"
       },
-      "websiteUrl": "https://modelcontextprotocol.io",
+      "websiteUrl": "https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem",
       "_meta": {
         "io.sami/gallery": {
           "legacyId": "builtin-filesystem",
@@ -1164,7 +1196,9 @@
               "name": "list_allowed_directories",
               "description": "List the directories this server is allowed to access."
             }
-          ]
+          ],
+          "about": "Provides secure access to the local filesystem for AI agents: read and write files, manage directories, search content, and retrieve metadata — all confined to user-specified allowed directories.",
+          "vendorLabel": "Model Context Protocol"
         },
         "io.sami/install": {
           "configSnippet": "{\n  \"mcpServers\": {\n    \"builtin-filesystem\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"@modelcontextprotocol/server-filesystem\", \"${allowed_directories}\"]\n    }\n  }\n}"
@@ -1194,7 +1228,7 @@
       "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
       "name": "io.github.github/github-mcp-server",
       "title": "GitHub",
-      "description": "Remote GitHub MCP hosted by GitHub: repositories, issues, pull requests, Actions, security, and workflows. Authenticate via OAuth where supported or a Personal Access Token.",
+      "description": "GitHub: repositories, issues, pull requests, code search, and related API usage.",
       "version": "0.1.0",
       "repository": {
         "url": "https://github.com/github/github-mcp-server",
@@ -1210,16 +1244,16 @@
           "maintained": "vendor",
           "toolsSummary": [
             {
-              "name": "default_toolsets",
-              "description": "Repos, issues, pull requests, and related APIs; exact tool names depend on host configuration and enabled toolsets."
+              "name": "repos",
+              "description": "Repository tools toolset: files, branches, and repo metadata (combine toolsets via X-MCP-Toolsets or URL paths under /mcp/x/)."
             },
             {
-              "name": "optional_toolsets",
-              "description": "Additional groups such as actions, code_security, dependabot, notifications — enable per GitHub MCP remote documentation."
+              "name": "issues",
+              "description": "Issues toolset: triage and manage issues and labels."
             },
             {
-              "name": "authentication",
-              "description": "OAuth where the host supports it, or Bearer PAT (e.g. github_mcp_pat) for token-based access."
+              "name": "pull_requests",
+              "description": "Pull request toolset: review and manage PRs."
             }
           ]
         },
@@ -1239,7 +1273,7 @@
       "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
       "name": "npm/@notionhq/notion-mcp-server",
       "title": "Notion",
-      "description": "Notion workspace integration via the Notion API: pages, databases (data sources), search, and comments. Requires an integration token with page/database access.",
+      "description": "Notion workspaces: pages, databases, wikis, and team content through the Notion API.",
       "version": "0.1.0",
       "repository": {
         "url": "https://github.com/makenotion/notion-mcp-server",
@@ -1310,7 +1344,7 @@
       "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
       "name": "io.npm/excel-mcp-server",
       "title": "Office Excel",
-      "description": "Read and edit Excel (.xlsx) workbooks without Microsoft Excel: worksheets, formulas, formatting,...",
+      "description": "Read and edit Excel (.xlsx) workbooks without Microsoft Excel installed.",
       "version": "0.1.0",
       "websiteUrl": "https://excelmcpserver.com",
       "_meta": {
@@ -1421,7 +1455,9 @@
               "name": "delete_sheet_columns",
               "description": "Delete one or more columns starting at the specified column."
             }
-          ]
+          ],
+          "about": "Read and edit Excel (.xlsx) workbooks without Microsoft Excel: worksheets, formulas, formatting, charts, pivot tables, and tables.",
+          "vendorLabel": "Excel MCP Server"
         },
         "io.sami/install": {
           "configSnippet": "{\n  \"mcpServers\": {\n    \"builtin-office-excel\": {\n      \"command\": \"uvx\",\n      \"args\": [\"excel-mcp-server\", \"stdio\"]\n    }\n  }\n}"
