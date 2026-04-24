@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-04-24T21:48:17.523Z",
+  "generatedAt": "2026-04-24T22:13:09.006Z",
   "sections": {
     "help": {
       "index": "data/help-index.json",
@@ -12,7 +12,7 @@
     },
     "mcpRegistry": {
       "file": "data/mcp-registry.json",
-      "hash": "26b63c9ab65d0007c2dbdccf481abdb1e1d202f065737d83428f8adfb8f625c4",
+      "hash": "cc6f775a7547291652b2137610cbc45ab2277eb6dbe1eb373ac0650ce4f286d2",
       "totalServers": 18,
       "source": "sami-mcp-gallery"
     },
