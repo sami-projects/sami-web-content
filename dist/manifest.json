@@ -1,24 +1,24 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-04-23T23:56:19.661Z",
+  "generatedAt": "2026-04-24T21:48:17.523Z",
   "sections": {
     "help": {
       "index": "data/help-index.json",
       "root": "help/",
       "totalPages": 17,
-      "hash": "940bad75244aad1559b989502e651eb596af28391861bd3f0ad1d16fe69f7974",
+      "hash": "5a1813b851244e727cb1f4e1f5b44904bef3f7992f5465bc0a3a5f245b5b260e",
       "structure": "help/structure.json",
       "structureHash": "a2ff425c63e000721678df3aff84f03cb253ae13b67de4a93d427b5d0f9f7c52"
     },
     "mcpRegistry": {
       "file": "data/mcp-registry.json",
-      "hash": "47eb5ad35d3e3c5e37902affbeb9391c62cb5be407128d857fa0d01e69f7e13b",
+      "hash": "26b63c9ab65d0007c2dbdccf481abdb1e1d202f065737d83428f8adfb8f625c4",
       "totalServers": 18,
       "source": "sami-mcp-gallery"
     },
     "mcpIcons": {
       "root": "icons/",
-      "hash": "e59257ef15986aa1aa538d32348932cf29e5d48d717ce7ed445e22ab9b2c8d95",
+      "hash": "7420dbd8b480eee164d3769311fb778debaea513a22aa830ab697fb3f43811df",
       "fileCount": 16
     }
   }
