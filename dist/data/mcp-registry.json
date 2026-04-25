@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-04-24T22:13:08.941Z",
+  "generatedAt": "2026-04-25T00:44:53.498Z",
   "source": "sami-mcp-gallery",
-  "totalServers": 18,
+  "totalServers": 28,
   "servers": [
     {
       "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
@@ -1030,8 +1030,8 @@
       "_meta": {
         "io.sami/gallery": {
           "legacyId": "builtin-exa",
-          "icon": "search",
-          "iconBg": "#4F46E5",
+          "icon": "exa",
+          "iconBg": "#FFFFFF",
           "category": "Web",
           "maintained": "vendor",
           "toolsSummary": [
@@ -1118,6 +1118,65 @@
             "type": "stdio"
           },
           "runtimeHint": "uvx"
+        }
+      ]
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "npm/@thirdstrandstudio/mcp-figma",
+      "title": "Figma",
+      "description": "Figma design files: layouts, comments, components, libraries, and team collaboration.",
+      "version": "0.1.0",
+      "repository": {
+        "url": "https://github.com/thirdstrandstudio/mcp-figma",
+        "source": "github"
+      },
+      "websiteUrl": "https://github.com/thirdstrandstudio/mcp-figma",
+      "_meta": {
+        "io.sami/gallery": {
+          "legacyId": "builtin-figma",
+          "icon": "figma",
+          "iconBg": "#FFFFFF",
+          "category": "Productivity",
+          "maintained": "vendor",
+          "toolsSummary": [
+            {
+              "name": "figma_get_file",
+              "description": "Fetch a Figma file by file key, including node tree and metadata."
+            },
+            {
+              "name": "figma_get_file_nodes",
+              "description": "Load specific nodes (frames, components) from a file key."
+            },
+            {
+              "name": "figma_get_images",
+              "description": "Export or render image URLs for nodes in a file."
+            },
+            {
+              "name": "figma_get_comments",
+              "description": "Read file comments, optionally as Markdown."
+            },
+            {
+              "name": "figma_get_team_components",
+              "description": "List team components and libraries for reuse."
+            }
+          ],
+          "about": "Wraps the Figma REST API as MCP tools: files, images, components, comments, team projects, webhooks, and library analytics, authenticated with a personal access token in Sami.",
+          "vendorLabel": "Third Strand Studio"
+        },
+        "io.sami/install": {
+          "configSnippet": "{\n  \"mcpServers\": {\n    \"builtin-figma\": {\n      \"command\": \"npx\",\n      \"args\": [\"@thirdstrandstudio/mcp-figma\", \"--figma-token\", \"${figma_api_access_token}\"],\n      \"type\": \"stdio\"\n    }\n  }\n}"
+        }
+      },
+      "packages": [
+        {
+          "registryType": "npm",
+          "registryBaseUrl": "https://registry.npmjs.org",
+          "identifier": "@thirdstrandstudio/mcp-figma",
+          "transport": {
+            "type": "stdio"
+          },
+          "runtimeHint": "npx"
         }
       ]
     },
@@ -1226,6 +1285,65 @@
     },
     {
       "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "npm/firecrawl-mcp",
+      "title": "Firecrawl",
+      "description": "Advanced web scraping with JavaScript rendering, PDF support, and smart rate limiting",
+      "version": "0.1.0",
+      "repository": {
+        "url": "https://github.com/mendableai/firecrawl-mcp-server",
+        "source": "github"
+      },
+      "websiteUrl": "https://www.firecrawl.dev/",
+      "_meta": {
+        "io.sami/gallery": {
+          "legacyId": "builtin-firecrawl",
+          "icon": "firecrawl",
+          "iconBg": "#F97316",
+          "category": "Web",
+          "maintained": "vendor",
+          "toolsSummary": [
+            {
+              "name": "firecrawl_scrape",
+              "description": "Scrape a single URL with formats (markdown, HTML, links, screenshots) and options."
+            },
+            {
+              "name": "firecrawl_map",
+              "description": "Map a website to discover indexed URLs and structure."
+            },
+            {
+              "name": "firecrawl_crawl",
+              "description": "Crawl from a start URL with depth/limits; poll status with the companion check tool when used."
+            }
+          ],
+          "about": "Firecrawl turns websites into clean, model-friendly data: scrape, map, and crawl with JS rendering and rate limiting via the cloud API (API key) or a self-hosted instance.",
+          "vendorLabel": "Firecrawl"
+        },
+        "io.sami/install": {
+          "configSnippet": "{\n  \"mcpServers\": {\n    \"builtin-firecrawl\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"firecrawl-mcp\"],\n      \"type\": \"stdio\"\n    }\n  }\n}"
+        }
+      },
+      "packages": [
+        {
+          "registryType": "npm",
+          "registryBaseUrl": "https://registry.npmjs.org",
+          "identifier": "firecrawl-mcp",
+          "transport": {
+            "type": "stdio"
+          },
+          "runtimeHint": "npx",
+          "environmentVariables": [
+            {
+              "name": "FIRECRAWL_API_KEY",
+              "description": "Your Firecrawl API key. Required for using the cloud API (default) and optional for self-hosted instances.",
+              "isRequired": true,
+              "isSecret": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
       "name": "io.github.github/github-mcp-server",
       "title": "GitHub",
       "description": "GitHub: repositories, issues, pull requests, code search, and related API usage.",
@@ -1239,7 +1357,7 @@
         "io.sami/gallery": {
           "legacyId": "builtin-github",
           "icon": "github",
-          "iconBg": "#1F2328",
+          "iconBg": "#FFFF",
           "category": "Development",
           "maintained": "vendor",
           "toolsSummary": [
@@ -1266,6 +1384,135 @@
           "type": "streamable-http",
           "url": "https://api.githubcopilot.com/mcp/",
           "description": "GitHub-hosted remote MCP (Copilot). Use PAT or OAuth per client documentation."
+        }
+      ]
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "npm/@tacticlaunch/mcp-linear",
+      "title": "Linear",
+      "description": "Issues, roadmaps, and project delivery in Linear.",
+      "version": "0.1.0",
+      "repository": {
+        "url": "https://github.com/tacticlaunch/mcp-linear",
+        "source": "github"
+      },
+      "websiteUrl": "https://github.com/tacticlaunch/mcp-linear",
+      "_meta": {
+        "io.sami/gallery": {
+          "legacyId": "builtin-linear",
+          "icon": "linear",
+          "iconBg": "#FFFFFF",
+          "category": "Productivity",
+          "maintained": "vendor",
+          "toolsSummary": [
+            {
+              "name": "linear_getIssues",
+              "description": "List and filter issues across teams and projects."
+            },
+            {
+              "name": "linear_getIssueById",
+              "description": "Load an issue by ID or key (e.g. PROJ-12)."
+            },
+            {
+              "name": "linear_createIssue",
+              "description": "Create a new issue in a team."
+            },
+            {
+              "name": "linear_updateIssue",
+              "description": "Update fields, state, and assignment on an issue."
+            },
+            {
+              "name": "linear_searchIssues",
+              "description": "Search with filters, including text and state."
+            }
+          ],
+          "about": "MCP server for the Linear GraphQL API: issues, projects, teams, comments, labels, and cycles, driven by a personal API token in Sami or your environment.",
+          "vendorLabel": "Tacticlaunch"
+        },
+        "io.sami/install": {
+          "configSnippet": "{\n  \"mcpServers\": {\n    \"builtin-linear\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"@tacticlaunch/mcp-linear\"],\n      \"type\": \"stdio\"\n    }\n  }\n}"
+        }
+      },
+      "packages": [
+        {
+          "registryType": "npm",
+          "registryBaseUrl": "https://registry.npmjs.org",
+          "identifier": "@tacticlaunch/mcp-linear",
+          "transport": {
+            "type": "stdio"
+          },
+          "runtimeHint": "npx",
+          "environmentVariables": [
+            {
+              "name": "LINEAR_API_TOKEN",
+              "description": "Personal API key from Linear (Settings — API).",
+              "isRequired": true,
+              "isSecret": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "npm/@modelcontextprotocol/server-memory",
+      "title": "Knowledge Graph Memory",
+      "description": "Persistent knowledge-graph memory: entities and relationships stored locally for context across sessions.",
+      "version": "0.1.0",
+      "repository": {
+        "url": "https://github.com/modelcontextprotocol/servers",
+        "source": "github"
+      },
+      "websiteUrl": "https://github.com/modelcontextprotocol/servers/tree/main/src/memory",
+      "_meta": {
+        "io.sami/gallery": {
+          "legacyId": "builtin-memory",
+          "icon": "memory",
+          "iconBg": "#7C3AED",
+          "category": "Utilities",
+          "maintained": "vendor",
+          "toolsSummary": [
+            {
+              "name": "create_entities",
+              "description": "Add named entities to the in-memory knowledge graph."
+            },
+            {
+              "name": "create_relations",
+              "description": "Link entities with typed relationships."
+            },
+            {
+              "name": "read_graph",
+              "description": "Read the current graph state."
+            },
+            {
+              "name": "search_nodes",
+              "description": "Query nodes in the graph by name or other attributes."
+            }
+          ],
+          "about": "The reference MCP memory server stores a local entity–relation graph in a JSON file (path configurable) so sessions can build up structured long-term context."
+        },
+        "io.sami/install": {
+          "configSnippet": "{\n  \"mcpServers\": {\n    \"builtin-memory\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"@modelcontextprotocol/server-memory\"],\n      \"type\": \"stdio\"\n    }\n  }\n}"
+        }
+      },
+      "packages": [
+        {
+          "registryType": "npm",
+          "registryBaseUrl": "https://registry.npmjs.org",
+          "identifier": "@modelcontextprotocol/server-memory",
+          "transport": {
+            "type": "stdio"
+          },
+          "runtimeHint": "npx",
+          "environmentVariables": [
+            {
+              "name": "MEMORY_FILE_PATH",
+              "description": "Path to the memory storage file (default: memory.jsonl in the server directory; see upstream README).",
+              "isRequired": false,
+              "isSecret": false
+            }
+          ]
         }
       ]
     },
@@ -1351,7 +1598,7 @@
         "io.sami/gallery": {
           "legacyId": "builtin-office-excel",
           "icon": "excel",
-          "iconBg": "#107C41",
+          "iconBg": "#fff",
           "category": "Data",
           "maintained": "vendor",
           "toolsSummary": [
@@ -1472,6 +1719,332 @@
             "type": "stdio"
           },
           "runtimeHint": "uvx"
+        }
+      ]
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "npm/@perplexity-ai/mcp-server",
+      "title": "Perplexity",
+      "description": "Answer-focused web lookup across domains via Perplexity.",
+      "version": "0.1.0",
+      "repository": {
+        "url": "https://github.com/perplexityai/modelcontextprotocol",
+        "source": "github"
+      },
+      "websiteUrl": "https://github.com/perplexityai/modelcontextprotocol",
+      "_meta": {
+        "io.sami/gallery": {
+          "legacyId": "builtin-perplexity",
+          "icon": "perplexity",
+          "iconBg": "#FFFFFF",
+          "category": "Web",
+          "maintained": "vendor",
+          "toolsSummary": [
+            {
+              "name": "perplexity_search",
+              "description": "Direct web search with ranked results and metadata (Search API)."
+            },
+            {
+              "name": "perplexity_ask",
+              "description": "Q&A with real-time search via the sonar-pro model."
+            },
+            {
+              "name": "perplexity_research",
+              "description": "Deep research reports using the sonar-deep-research model."
+            },
+            {
+              "name": "perplexity_reason",
+              "description": "Advanced reasoning and analysis with sonar-reasoning-pro."
+            }
+          ],
+          "about": "The official Perplexity MCP server on npm is `@perplexity-ai/mcp-server`; search, Q&A, research, and deep reasoning are backed by the same API. Sami’s builtin config uses `uvx` with the same package coordinates—set `PERPLEXITY_API_KEY` in the environment for either runner.",
+          "vendorLabel": "Perplexity"
+        },
+        "io.sami/install": {
+          "configSnippet": "{\n  \"mcpServers\": {\n    \"builtin-perplexity\": {\n      \"command\": \"uvx\",\n      \"args\": [\"-y\", \"@perplexity-ai/mcp-server\"],\n      \"type\": \"stdio\"\n    }\n  }\n}"
+        }
+      },
+      "packages": [
+        {
+          "registryType": "npm",
+          "registryBaseUrl": "https://registry.npmjs.org",
+          "identifier": "@perplexity-ai/mcp-server",
+          "transport": {
+            "type": "stdio"
+          },
+          "runtimeHint": "npx",
+          "environmentVariables": [
+            {
+              "name": "PERPLEXITY_API_KEY",
+              "description": "Perplexity API key (https://console.perplexity.ai).",
+              "isRequired": true,
+              "isSecret": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "npm/@modelcontextprotocol/server-sequential-thinking",
+      "title": "Sequential Thinking",
+      "description": "Step-by-step reasoning: decompose problems, revise answers, and explore alternatives in order.",
+      "version": "0.1.0",
+      "repository": {
+        "url": "https://github.com/modelcontextprotocol/servers",
+        "source": "github"
+      },
+      "websiteUrl": "https://github.com/modelcontextprotocol/servers/tree/HEAD/src/sequentialthinking",
+      "_meta": {
+        "io.sami/gallery": {
+          "legacyId": "builtin-sequential-thinking",
+          "icon": "mcp",
+          "iconBg": "#FFFFFF",
+          "category": "Utilities",
+          "maintained": "vendor",
+          "toolsSummary": [
+            {
+              "name": "sequentialthinking",
+              "description": "Dynamic multi-step problem solving: record thoughts, revise, branch, and adjust the plan as understanding evolves."
+            }
+          ],
+          "about": "Reference MCP server for deliberate multi-step thinking: the agent records thoughts in sequence, can revise or branch, and can explore alternatives while keeping a clear order.",
+          "vendorLabel": "MCP"
+        },
+        "io.sami/install": {
+          "configSnippet": "{\n  \"mcpServers\": {\n    \"builtin-sequential-thinking\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"@modelcontextprotocol/server-sequential-thinking\"],\n      \"type\": \"stdio\"\n    }\n  }\n}"
+        }
+      },
+      "packages": [
+        {
+          "registryType": "npm",
+          "registryBaseUrl": "https://registry.npmjs.org",
+          "identifier": "@modelcontextprotocol/server-sequential-thinking",
+          "transport": {
+            "type": "stdio"
+          },
+          "runtimeHint": "npx"
+        }
+      ]
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "npm/@zencoderai/slack-mcp-server",
+      "title": "Slack",
+      "description": "Slack workspace via bot token: channels, messaging, threads, and member profiles.",
+      "version": "0.1.0",
+      "repository": {
+        "url": "https://github.com/zencoderai/slack-mcp-server",
+        "source": "github"
+      },
+      "websiteUrl": "https://github.com/zencoderai/slack-mcp-server",
+      "_meta": {
+        "io.sami/gallery": {
+          "legacyId": "builtin-slack",
+          "icon": "slack",
+          "iconBg": "#FFFFFF",
+          "category": "Communication",
+          "maintained": "vendor",
+          "toolsSummary": [
+            {
+              "name": "slack_list_channels",
+              "description": "List public or configured channels in the workspace (pagination supported)."
+            },
+            {
+              "name": "slack_post_message",
+              "description": "Post a new message to a channel (channel_id + text)."
+            },
+            {
+              "name": "slack_get_channel_history",
+              "description": "Fetch recent messages from a channel (optional limit)."
+            }
+          ],
+          "about": "Connects a Slack app (bot token) so agents can list channels, read and post messages, and work with threads and member info according to the server’s tool surface.",
+          "vendorLabel": "Slack"
+        },
+        "io.sami/install": {
+          "configSnippet": "{\n  \"mcpServers\": {\n    \"builtin-slack\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"@zencoderai/slack-mcp-server\"],\n      \"env\": {\n        \"SLACK_BOT_TOKEN\": \"\",\n        \"SLACK_TEAM_ID\": \"\"\n      },\n      \"type\": \"stdio\"\n    }\n  }\n}"
+        }
+      },
+      "packages": [
+        {
+          "registryType": "npm",
+          "registryBaseUrl": "https://registry.npmjs.org",
+          "identifier": "@zencoderai/slack-mcp-server",
+          "transport": {
+            "type": "stdio"
+          },
+          "runtimeHint": "npx",
+          "environmentVariables": [
+            {
+              "name": "SLACK_BOT_TOKEN",
+              "description": "Slack bot user OAuth token (xoxb-).",
+              "isRequired": true,
+              "isSecret": true
+            },
+            {
+              "name": "SLACK_TEAM_ID",
+              "description": "Slack workspace (team) ID.",
+              "isRequired": true,
+              "isSecret": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "npm/tavily-mcp",
+      "title": "Tavily Search",
+      "description": "Web search with optional page extraction via Tavily.",
+      "version": "0.1.0",
+      "repository": {
+        "url": "https://github.com/tavily-ai/tavily-mcp",
+        "source": "github"
+      },
+      "websiteUrl": "https://github.com/tavily-ai/tavily-mcp",
+      "_meta": {
+        "io.sami/gallery": {
+          "legacyId": "builtin-tavily",
+          "icon": "tavily",
+          "iconBg": "#FFFFFF",
+          "category": "Web",
+          "maintained": "vendor",
+          "toolsSummary": [
+            {
+              "name": "tavily-search",
+              "description": "Real-time web search using the Tavily API."
+            },
+            {
+              "name": "tavily-extract",
+              "description": "Extract structured data from a web page by URL."
+            },
+            {
+              "name": "tavily-map",
+              "description": "Map and summarize site structure for a given domain or URL."
+            },
+            {
+              "name": "tavily-crawl",
+              "description": "Crawl multiple pages and collect content in one pass."
+            }
+          ],
+          "about": "Tavily MCP brings Tavily search, extraction, and crawl APIs into the Model Context Protocol so agents can look up the web, pull page content, and build research workflows with one API key.",
+          "vendorLabel": "Tavily"
+        },
+        "io.sami/install": {
+          "configSnippet": "{\n  \"mcpServers\": {\n    \"builtin-tavily\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"tavily-mcp\"],\n      \"type\": \"stdio\"\n    }\n  }\n}"
+        }
+      },
+      "packages": [
+        {
+          "registryType": "npm",
+          "registryBaseUrl": "https://registry.npmjs.org",
+          "identifier": "tavily-mcp",
+          "transport": {
+            "type": "stdio"
+          },
+          "runtimeHint": "npx",
+          "environmentVariables": [
+            {
+              "name": "TAVILY_API_KEY",
+              "description": "API key for Tavily services (dashboard or docs.tavily.com).",
+              "isRequired": true,
+              "isSecret": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "pypi/mcp-server-time",
+      "title": "Time",
+      "description": "Current time and timezone conversion (IANA), with automatic system timezone detection",
+      "version": "0.1.0",
+      "repository": {
+        "url": "https://github.com/modelcontextprotocol/servers",
+        "source": "github"
+      },
+      "websiteUrl": "https://github.com/modelcontextprotocol/servers/tree/main/src/time",
+      "_meta": {
+        "io.sami/gallery": {
+          "legacyId": "builtin-time",
+          "icon": "clock",
+          "iconBg": "#0EA5E9",
+          "category": "Utilities",
+          "maintained": "vendor",
+          "toolsSummary": [
+            {
+              "name": "get_current_time",
+              "description": "Return the current time for a given IANA timezone (or the configured default)."
+            },
+            {
+              "name": "convert_time",
+              "description": "Convert a time from one IANA timezone to another."
+            }
+          ],
+          "about": "Official MCP time utilities: get “now” and convert between IANA timezones, so agents can reason about deadlines and user-local times without hand-rolled date math."
+        },
+        "io.sami/install": {
+          "configSnippet": "{\n  \"mcpServers\": {\n    \"builtin-time\": {\n      \"command\": \"uvx\",\n      \"args\": [\"mcp-server-time\"],\n      \"type\": \"stdio\"\n    }\n  }\n}"
+        }
+      },
+      "packages": [
+        {
+          "registryType": "pypi",
+          "registryBaseUrl": "https://pypi.org",
+          "identifier": "mcp-server-time",
+          "transport": {
+            "type": "stdio"
+          },
+          "runtimeHint": "uvx"
+        }
+      ]
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "npm/wikipedia-mcp",
+      "title": "Wikipedia",
+      "description": "Search and read Wikipedia articles as Markdown for factual, cited lookups.",
+      "version": "0.1.0",
+      "repository": {
+        "url": "https://github.com/timjuenemann/wikipedia-mcp",
+        "source": "github"
+      },
+      "websiteUrl": "https://github.com/timjuenemann/wikipedia-mcp",
+      "_meta": {
+        "io.sami/gallery": {
+          "legacyId": "builtin-wikipedia",
+          "icon": "wikipedia",
+          "iconBg": "#FFFFFF",
+          "category": "Web",
+          "maintained": "community",
+          "toolsSummary": [
+            {
+              "name": "search",
+              "description": "Search the English Wikipedia API and return titles, snippets, and article links."
+            },
+            {
+              "name": "readArticle",
+              "description": "Load a full article as Markdown by title or page ID."
+            }
+          ],
+          "about": "Fetches and summarizes Wikipedia: search topics and read articles as Markdown to ground answers in a widely used, citable source—without API keys for public wikis."
+        },
+        "io.sami/install": {
+          "configSnippet": "{\n  \"mcpServers\": {\n    \"builtin-wikipedia\": {\n      \"command\": \"npx\",\n      \"args\": [\"-y\", \"wikipedia-mcp\"],\n      \"type\": \"stdio\"\n    }\n  }\n}"
+        }
+      },
+      "packages": [
+        {
+          "registryType": "npm",
+          "registryBaseUrl": "https://registry.npmjs.org",
+          "identifier": "wikipedia-mcp",
+          "transport": {
+            "type": "stdio"
+          },
+          "runtimeHint": "npx"
         }
       ]
     }
