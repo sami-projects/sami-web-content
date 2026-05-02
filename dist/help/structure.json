@@ -1,0 +1,22 @@
+{
+  "sections": [
+    {"id": "overview", "title": "Overview", "path": "/help/overview", "filePath": "overview.md"},
+    {"id": "getting-started", "title": "Getting Started", "path": "/help/getting-started", "filePath": "getting-started/index.md", "sections": [
+      {"id": "first-agent", "title": "Your First Agent", "path": "/help/getting-started/first-agent", "filePath": "getting-started/first-agent.md"},
+      {"id": "configuration", "title": "Configuration", "path": "/help/getting-started/configuration", "filePath": "getting-started/configuration.md"}
+    ]},
+    {"id": "agents", "title": "Agents", "path": "/help/agents", "filePath": "agents.md"},
+    {"id": "prompt-placeholders", "title": "Prompt and placeholders", "path": "/help/prompt-placeholders", "filePath": "prompt-placeholders.md"},
+    {"id": "tools", "title": "Tools", "path": "/help/tools", "filePath": "tools.md"},
+    {"id": "gallery", "title": "Tool Gallery", "path": "/help/gallery", "filePath": "gallery.md"},
+    {"id": "llm-accounts", "title": "LLM Accounts", "path": "/help/llm-accounts", "filePath": "llm-accounts.md"},
+    {"id": "ai-assistant", "title": "AI Assistant", "path": "/help/ai-assistant", "filePath": "ai-assistant.md"},
+    {"id": "settings", "title": "Settings", "path": "/help/settings", "filePath": "settings.md"},
+    {"id": "automation", "title": "Automation (CLI & API)", "path": "/help/automation", "filePath": "automation/index.md", "sections": [
+      {"id": "cli", "title": "CLI", "path": "/help/automation/cli", "filePath": "automation/cli.md"},
+      {"id": "rest-api", "title": "REST API", "path": "/help/automation/rest-api", "filePath": "automation/rest-api.md"}
+    ]},
+    {"id": "troubleshooting", "title": "Troubleshooting", "path": "/help/troubleshooting", "filePath": "troubleshooting.md"},
+    {"id": "contact", "title": "Contact", "path": "/help/contact", "filePath": "contact.md"}
+  ]
+}

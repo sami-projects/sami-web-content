@@ -1,0 +1,3 @@
+# dist: LF for text data; SVG line endings irrelevant to browsers — skip normalization for icons (no Git noise)
+dist/** text eol=lf
+dist/icons/** -text
