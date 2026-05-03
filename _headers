@@ -1,0 +1,6 @@
+# Cloudflare Pages: allow the marketing site (any origin) to fetch JSON, markdown, SVG.
+# See https://developers.cloudflare.com/pages/configuration/headers/
+/*
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Methods: GET, HEAD, OPTIONS
+  X-Robots-Tag: noindex
