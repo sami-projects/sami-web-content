@@ -5,11 +5,12 @@ Tools in Sami are **MCP (Model Context Protocol)** servers. Each tool exposes ca
 ## Adding and connecting
 
 - **Add** — in **Tools**, use the **Add** (➕) button in the toolbar. A new tool opens in the editor.
-- **Transport** — choose how the app talks to the server:
-  - **stdio** — local process: you set the **command** (path to the executable) and optional **arguments** and **environment variables**. The app starts the process when you connect. The app does **not** bundle `uv`, `node`, or `npx`; it uses whatever is installed on your machine. If `uvx` / `npx` (or similar launchers) misbehave, check versions and **PATH** (see [Troubleshooting](/help/troubleshooting) → **stdio startup issues: PATH mismatch or first-run timeout**).
-  - **SSE** — remote server: you set the **URL** and optional **headers**. The app connects to an already running server.
+- **Transport** — in **Settings**, open **Transport Type** and choose how the app talks to the server (labels match the UI):
+  - **STDIO (Local Process)** — you set the **command** (path to the executable) and optional **arguments** and **environment variables**. The app starts the process when you connect. The app does **not** bundle `uv`, `node`, or `npx`; it uses whatever is installed on your machine. If `uvx` / `npx` (or similar launchers) misbehave, check versions and **PATH** (see [Troubleshooting](/help/troubleshooting) → **stdio startup issues: PATH mismatch or first-run timeout**).
+  - **SSE (Server-Sent Events)** — remote server over an SSE endpoint: you set the **URL** and optional **headers**. The app connects to an already running server.
+  - **HTTP Stream (Recommended)** — remote server over the streamable HTTP transport (modern MCP over HTTP): you set the **URL** and optional **headers**. Prefer this when the host documents both transports or defaults to HTTP Stream. If connection fails with HTML or the wrong protocol, check the path the provider gives (for example `.../mcp` vs `.../sse`) and try the other remote transport if both are supported.
 - **Settings** — in the tool editor side panel, open **Settings** (connection icon) to set command/URL, args, env, and other options. Save the tool before connecting.
-- **Connect** — in the editor, use **Save & Start Server** (stdio) or **Save & Connect to Server** (SSE) to apply changes and connect. If the config is already saved, use **Start Server** or **Connect to Server**. Once connected, the **Server Info** section shows server name, version, and number of tools/resources/prompts.
+- **Connect** — in the editor, use **Save & Start Server** (stdio) or **Save & Connect to Server** (SSE or HTTP Stream). If the config is already saved, use **Start Server** or **Connect to Server**. Once connected, the **Server Info** section shows server name, version, and number of tools/resources/prompts.
 
 From the **Tools** list you can start several tools at once: **Start Available** starts all tools that are **Ready** (configured but not yet connected). **Stop All** stops all connected tools. The **More** menu offers **Start All**, **Restart Connected**, **Export Tools**, **Import Tools**, and **View App Logs**.
 
@@ -32,7 +33,7 @@ In the list and in the editor, each tool has a status:
 - **Ready** — configured (e.g. command or URL set) but not connected. You can start or connect from the list or the editor.
 - **Connected** — the app is connected to the MCP server; agents can use this tool.
 - **Starting** — connection or process start in progress.
-- **Not configured** — configuration is missing or invalid (e.g. empty command for stdio, invalid URL for SSE, or required settings not filled). Open the tool and complete **Settings**.
+- **Not configured** — configuration is missing or invalid (e.g. empty command for stdio, invalid URL for a remote transport, or required settings not filled). Open the tool and complete **Settings**.
 - **Error** — connection or start failed (wrong path, server not running, network issue). Check **Settings** and **Logs** (see below).
 
 **Not configured** is a configuration signal, not a hard blocker. You can still try to start/connect the tool, and in many real-world cases it may work (for example, when a registry marks a field as required but the server accepts an empty value). In the Tools table, **Not configured** rows also show a short hint under the status with the first missing setting.
@@ -46,9 +47,9 @@ If a field is incorrectly marked as required, you can disable that requirement i
 
 Logging can be enabled or disabled in **Settings → Logging**. If **Logs** in the tool editor is empty, ensure logging is enabled and try connecting again.
 
-## Authentication for HTTP/SSE tools
+## Authentication for remote tools (SSE and HTTP Stream)
 
-For remote tools, open **Settings** in the tool editor and choose **Authentication Type**:
+For **SSE** and **HTTP Stream** tools, open **Settings** in the tool editor and choose **Authentication Type**:
 
 - **Auto** — let the app handle auth automatically when possible.
 - **Bearer Token (manual API key)** — enter token/key manually.

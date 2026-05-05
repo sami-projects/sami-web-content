@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-05-02T22:54:27.301Z",
+  "generatedAt": "2026-05-05T22:46:28.920Z",
   "sections": {
     "help": {
       "index": "data/help-index.json",
       "root": "help/",
       "totalPages": 17,
-      "hash": "5a1813b851244e727cb1f4e1f5b44904bef3f7992f5465bc0a3a5f245b5b260e",
+      "hash": "a26965531c5e1e3b77f71524106fd25b7dfac82f741812777ca20c25ba36e39b",
       "structure": "help/structure.json",
-      "structureHash": "a2ff425c63e000721678df3aff84f03cb253ae13b67de4a93d427b5d0f9f7c52"
+      "structureHash": "1fcd5eae55a77bab0258fcb1694f23530d83c4e75d0d1f6dbbfa0666545a0db9"
     },
     "mcpRegistry": {
       "file": "data/mcp-registry.json",

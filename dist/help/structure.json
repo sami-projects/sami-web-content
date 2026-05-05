@@ -1,6 +1,6 @@
 {
   "sections": [
-    {"id": "overview", "title": "Overview", "path": "/help/overview", "filePath": "overview.md"},
+    {"id": "overview", "title": "What is Sami", "path": "/help/overview", "filePath": "overview.md"},
     {"id": "getting-started", "title": "Getting Started", "path": "/help/getting-started", "filePath": "getting-started/index.md", "sections": [
       {"id": "first-agent", "title": "Your First Agent", "path": "/help/getting-started/first-agent", "filePath": "getting-started/first-agent.md"},
       {"id": "configuration", "title": "Configuration", "path": "/help/getting-started/configuration", "filePath": "getting-started/configuration.md"}

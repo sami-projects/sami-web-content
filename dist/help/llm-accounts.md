@@ -4,7 +4,7 @@
 
 ## Why accounts exist
 
-Each **account** ties together a **provider** (e.g. OpenAI, Anthropic), your **API key** (or other auth), and an optional **default model**. When you edit an agent, you choose which account and which model to use for that agent’s runs. The AI Assistant uses its own model, set in **Settings → AI Assistant**, which can be a different account and model. So you can have several accounts (e.g. one for OpenAI, one for Yandex) and pick the right one per agent or for the assistant.
+Each **account** ties together a **provider** (e.g. OpenAI, Anthropic), your **API key** (or other auth), and an optional **default model**. When you edit an agent, you choose which account and which model to use for that agent’s runs. The AI Assistant uses its own model, set in **Settings → AI Assistant**, which can be a different account and model. So you can have several accounts (e.g. one for OpenAI, one for Anthropic) and pick the right one per agent or for the assistant.
 
 ## Adding an account
 

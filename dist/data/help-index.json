@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-02T22:54:27.298Z",
+  "generatedAt": "2026-05-05T22:46:28.918Z",
   "totalPages": 17,
   "navSlugs": [
     "overview",
@@ -24,15 +24,15 @@
     {
       "slug": "overview",
       "path": "overview.md",
-      "title": "Overview",
-      "hash": "f1eec399b085d64e1b7afae3491c18d7020b73d8a151624e905f8b13e1638f18",
+      "title": "What is Sami",
+      "hash": "318d894332af8ec7e45dac10549e757ca090ba916fbf9e898cf5603b635e284a",
       "order": 0
     },
     {
       "slug": "getting-started",
       "path": "getting-started/index.md",
       "title": "Getting Started",
-      "hash": "44776e1e1e4171b3a09f00cd30e6002a24a745df707af7751c0aa11288e772c2",
+      "hash": "a96740503fc0a5b1175ed61a5eb1c1a1d5cc8becc98e6c4fbbddd61b9d4471c8",
       "order": 1
     },
     {
@@ -67,7 +67,7 @@
       "slug": "tools",
       "path": "tools.md",
       "title": "Tools",
-      "hash": "64c571765844dae668e3b8b16fb931b00979a3432816765f7213900a80bacc1d",
+      "hash": "9ef7753d1ecf16164f315e08c874a63573a656a292358acefa90f0edadd20bf3",
       "order": 6
     },
     {
@@ -81,7 +81,7 @@
       "slug": "llm-accounts",
       "path": "llm-accounts.md",
       "title": "LLM Accounts",
-      "hash": "2dc9a0dfb78339a0b3f1516abef70ae46c5b64f012ba646b977dbd5f5be6ff47",
+      "hash": "1c443f36f7bf6fecd21ec6e13f1efe370769550fe1f0feb641e119f72d6a781f",
       "order": 8
     },
     {
