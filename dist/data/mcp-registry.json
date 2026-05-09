@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-04-30T23:36:59.950Z",
+  "generatedAt": "2026-05-08T22:39:57.871Z",
   "source": "sami-mcp-gallery",
-  "totalServers": 100,
+  "totalServers": 102,
   "servers": [
     {
       "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
@@ -1139,6 +1139,49 @@
               "isSecret": true
             }
           ]
+        }
+      ]
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "pypi/frankfurtermcp",
+      "title": "Currency conversion",
+      "description": "Exchange rates and currency conversion using the Frankfurter API.",
+      "version": "0.1.0",
+      "repository": {
+        "url": "https://github.com/anirbanbasu/frankfurtermcp",
+        "source": "github"
+      },
+      "websiteUrl": "https://github.com/anirbanbasu/frankfurtermcp",
+      "_meta": {
+        "io.sami/gallery": {
+          "legacyId": "builtin-currency-conversion",
+          "icon": "currency-conversion",
+          "iconBg": "#FFFFFF",
+          "category": "Utilities",
+          "maintained": "community",
+          "toolsSummary": [
+            {
+              "name": "rates / convert",
+              "description": "Fetch exchange rates and convert amounts via Frankfurter HTTP API."
+            }
+          ],
+          "about": "Frankfurter MCP server exposes ECB-backed FX rates for currency conversion workflows.",
+          "vendorLabel": "frankfurtermcp"
+        },
+        "io.sami/install": {
+          "configSnippet": "{\n  \"mcpServers\": {\n    \"builtin-currency-conversion\": {\n      \"command\": \"uvx\",\n      \"args\": [\n        \"frankfurtermcp\"\n      ],\n      \"type\": \"stdio\"\n    }\n  }\n}"
+        }
+      },
+      "packages": [
+        {
+          "registryType": "pypi",
+          "registryBaseUrl": "https://pypi.org",
+          "identifier": "frankfurtermcp",
+          "transport": {
+            "type": "stdio"
+          },
+          "runtimeHint": "uvx"
         }
       ]
     },
@@ -2349,6 +2392,49 @@
         {
           "type": "streamable-http",
           "url": "https://huggingface.co/mcp"
+        }
+      ]
+    },
+    {
+      "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+      "name": "npm/mcp-image-extractor",
+      "title": "Image Reader",
+      "description": "Load images from local files, from URLs, or from base64-encoded data so the model can analyze visual content.",
+      "version": "0.1.0",
+      "repository": {
+        "url": "https://github.com/ifmelate/mcp-image-extractor",
+        "source": "github"
+      },
+      "websiteUrl": "https://github.com/ifmelate/mcp-image-extractor",
+      "_meta": {
+        "io.sami/gallery": {
+          "legacyId": "builtin-image-reader",
+          "icon": "image-reader",
+          "iconBg": "#FFFFFF",
+          "category": "Data",
+          "maintained": "community",
+          "toolsSummary": [
+            {
+              "name": "images / urls / base64",
+              "description": "Load image content from disk paths, HTTP(S) URLs, or base64 payloads for multimodal analysis."
+            }
+          ],
+          "about": "MCP server that feeds image bytes into the agent workflow so models can interpret charts, screenshots, and photos.",
+          "vendorLabel": "mcp-image-extractor"
+        },
+        "io.sami/install": {
+          "configSnippet": "{\n  \"mcpServers\": {\n    \"builtin-image-reader\": {\n      \"command\": \"npx\",\n      \"args\": [\n        \"-y\",\n        \"mcp-image-extractor\"\n      ],\n      \"type\": \"stdio\"\n    }\n  }\n}"
+        }
+      },
+      "packages": [
+        {
+          "registryType": "npm",
+          "registryBaseUrl": "https://registry.npmjs.org",
+          "identifier": "mcp-image-extractor",
+          "transport": {
+            "type": "stdio"
+          },
+          "runtimeHint": "npx"
         }
       ]
     },
